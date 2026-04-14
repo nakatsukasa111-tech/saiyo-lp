@@ -22,10 +22,19 @@ nav.querySelectorAll('a').forEach((a) => {
 });
 
 // ----------------------------------------
+// Apply data-img attributes as background-image
+// (assets/xxx.jpg をフォルダに置けば自動で表示されます)
+// ----------------------------------------
+document.querySelectorAll('[data-img]').forEach((el) => {
+  const src = el.getAttribute('data-img');
+  if (src) el.style.setProperty('--bg', `url("${src}")`);
+});
+
+// ----------------------------------------
 // Fade-in on scroll (IntersectionObserver)
 // ----------------------------------------
 const fadeTargets = document.querySelectorAll(
-  '.section-head, .about-text, .about-stats li, .job-card, .voice-card, .entry-form'
+  '.section-head, .about-text, .about-stats li, .service-card, .mvv-item, .feature-card, .welcome, .job-card, .voice-card, .message-box, .entry-form'
 );
 fadeTargets.forEach((el) => {
   el.style.opacity = '0';

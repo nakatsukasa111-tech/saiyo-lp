@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>RECRUIT | 株式会社サイヨウ 採用サイト</title>
-  <meta name="description" content="株式会社サイヨウの採用情報。私たちと一緒に未来をつくる仲間を募集しています。" />
+  <title>RECRUIT | 株式会社エヌデイエス（NeeDS）採用サイト</title>
+  <meta name="description" content="神戸のパーソナルトレーニングジムNeeDS（株式会社エヌデイエス）の採用サイト。身体づくりを通じて人々の人生をより良く変える仲間を募集しています。" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet" />
@@ -13,10 +13,14 @@
 <body>
   <header class="site-header" id="siteHeader">
     <div class="container header-inner">
-      <a href="#top" class="logo">SAIYO<span>.</span></a>
+      <a href="#top" class="logo">
+        <!-- ロゴ画像を assets/logo.png に置くと自動で差し替わります -->
+        <img src="assets/logo.png" alt="NeeDS" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'logo-text',textContent:'NeeDS'}))" />
+      </a>
       <nav class="nav" id="nav">
         <ul>
           <li><a href="#about">会社紹介</a></li>
+          <li><a href="#features">3つの特徴</a></li>
           <li><a href="#jobs">募集職種</a></li>
           <li><a href="#voice">社員の声</a></li>
           <li><a href="#entry">応募フォーム</a></li>
@@ -32,18 +36,20 @@
     <!-- Hero -->
     <section class="hero">
       <div class="hero-bg"></div>
+      <div class="hero-overlay"></div>
       <div class="container hero-inner">
-        <p class="hero-eyebrow">RECRUITING 2026</p>
+        <p class="hero-eyebrow">RECRUIT / 採用情報</p>
         <h1 class="hero-title">
-          つくるのは、<br />
-          <span class="accent">あなたと、未来。</span>
+          自分のことが<br />
+          <span class="accent">好きになる場所、</span>NeeDS
         </h1>
         <p class="hero-lead">
-          テクノロジーで社会に新しい価値を届ける。<br />
-          私たちと一緒に、次の時代をつくりませんか。
+          身体づくりを通じて、人々の人生をより良く変える。<br />
+          神戸のパーソナルトレーニングジムNeeDSで、<br class="pc-only" />
+          私たちと一緒に働きませんか。
         </p>
         <div class="hero-cta">
-          <a href="#entry" class="btn btn-primary">エントリーする</a>
+          <a href="#entry" class="btn btn-primary">応募する</a>
           <a href="#about" class="btn btn-ghost">会社を知る</a>
         </div>
       </div>
@@ -57,104 +63,215 @@
       <div class="container">
         <div class="section-head">
           <p class="section-en">ABOUT US</p>
-          <h2 class="section-title">会社紹介</h2>
+          <h2 class="section-title">神戸のトレーニングジムといえばNeeDS</h2>
         </div>
 
         <div class="about-grid">
           <div class="about-text">
-            <h3>人を、技術を、未来を育てる会社。</h3>
+            <h3>身体づくりを通じて、人々の人生をより良く変える。</h3>
             <p>
-              株式会社サイヨウは、Webアプリケーション開発・DX支援・人材育成を軸に事業を展開するITカンパニーです。
-              「人を大切にする」を理念に掲げ、社員一人ひとりの成長を会社の成長と捉えています。
+              神戸で10年以上の指導実績を誇るNeeDS（ニーズ）では、お客様に合わせたトレーニングをご提供しております。
+              独自のメソッドで機能的な身体づくりはもちろん、健康の維持・向上、ダイエットやスポーツパフォーマンス向上まで、幅広く対応いたします。
             </p>
             <p>
-              若手もベテランも、フラットに意見を交わし、挑戦できる環境。
-              あなたの「やってみたい」を形にできる場所が、ここにあります。
+              NeeDSは、運動やトレーニングを通じて「人々の人生を変えること」を使命としています。
+              長年の実績から培った独自メソッドを軸に、コンディショニングや動き作りを行うパーソナルトレーニングジムです。
             </p>
           </div>
           <ul class="about-stats">
             <li>
-              <span class="num">2012</span>
-              <span class="label">設立年</span>
+              <span class="num">10<small>年+</small></span>
+              <span class="label">指導実績</span>
             </li>
             <li>
-              <span class="num">180<small>名</small></span>
-              <span class="label">社員数</span>
+              <span class="num">3<small>業態</small></span>
+              <span class="label">サービス展開</span>
             </li>
             <li>
-              <span class="num">98<small>%</small></span>
-              <span class="label">定着率</span>
+              <span class="num">1<small>年+</small></span>
+              <span class="label">高い継続率</span>
             </li>
             <li>
-              <span class="num">12<small>期</small></span>
-              <span class="label">連続増収</span>
+              <span class="num">神戸</span>
+              <span class="label">拠点エリア</span>
             </li>
           </ul>
+        </div>
+
+        <!-- Services -->
+        <div class="services">
+          <p class="services-lead">目的に応じて選べる3つのサービスを展開しています。</p>
+          <div class="services-grid">
+            <article class="service-card">
+              <p class="service-cat">PRIVATE</p>
+              <h4>プライベートジムNeeDS</h4>
+              <p>目的や年齢に合わせて、経験豊富なトレーナーがマンツーマンでサポート。運動初心者の方から、趣味のスポーツを楽しむ方まで。</p>
+            </article>
+            <article class="service-card">
+              <p class="service-cat">ATHLETE</p>
+              <h4>アスリートジムNeeDS</h4>
+              <p>記録を伸ばしたい、パフォーマンスを高めたいアスリートのために設計されたジム環境。専門トレーナーが本気でサポートします。</p>
+            </article>
+            <article class="service-card">
+              <p class="service-cat">JUNIOR</p>
+              <h4>NeeDSジュニア</h4>
+              <p>小中学生を対象にした総合トレーニングプログラム。楽しく身体を動かしながら、次世代アスリートの可能性を育てます。</p>
+            </article>
+          </div>
+        </div>
+
+        <!-- Mission / Vision / Value -->
+        <div class="mvv">
+          <div class="mvv-item">
+            <h4>Mission</h4>
+            <p class="mvv-sub">我々の使命</p>
+            <p class="mvv-body">関わる人々の人生をより良く変えること</p>
+          </div>
+          <div class="mvv-item">
+            <h4>Vision</h4>
+            <p class="mvv-sub">我々の目指す姿</p>
+            <p class="mvv-body">「自分のことが好きになる場所、NeeDS」</p>
+          </div>
+          <div class="mvv-item">
+            <h4>Value</h4>
+            <p class="mvv-sub">ビジョンの叶え方</p>
+            <ul class="mvv-list">
+              <li><strong>ワクワクする</strong>可能性を信じて、挑戦する</li>
+              <li><strong>プロ意識を持つ</strong>自身の健康と組織の規律を守り、価値提供する</li>
+              <li><strong>チームプレイする</strong>敬意をもって他者と連携し、貢献する</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section class="section section-alt" id="features">
+      <div class="container">
+        <div class="section-head">
+          <p class="section-en">FEATURES</p>
+          <h2 class="section-title">NeeDSの3つの特徴</h2>
+        </div>
+
+        <div class="features">
+          <article class="feature-card">
+            <div class="feature-img" data-img="assets/feature1.jpg">
+              <span class="feature-num">特徴<br />01</span>
+            </div>
+            <div class="feature-body">
+              <h3>経験豊富なトレーナーが<br />マンツーマンで徹底サポート</h3>
+              <p>
+                NeeDSでは、プロの現場で活躍するトレーナーや専門家を外部アドバイザーとして迎え、毎月研修会を実施しています。
+                トレーニング・栄養・メンタル・障害予防など多角的な学びを通じて、お客様一人ひとりに最適なサポートを行います。
+              </p>
+            </div>
+          </article>
+
+          <article class="feature-card reverse">
+            <div class="feature-img" data-img="assets/feature2.jpg">
+              <span class="feature-num">特徴<br />02</span>
+            </div>
+            <div class="feature-body">
+              <h3>プロアスリートが認めた<br />独自メソッド導入</h3>
+              <p>
+                トップアスリートの指導経験をもとに開発された、NeeDS独自のメソッドで、
+                筋力・柔軟性・体幹・バランスを総合的に鍛え、機能的な身体へ導きます。
+              </p>
+            </div>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-img" data-img="assets/feature3.jpg">
+              <span class="feature-num">特徴<br />03</span>
+            </div>
+            <div class="feature-body">
+              <h3>圧倒的な実績と継続率</h3>
+              <p>
+                地域で10年以上の実績を持ち、ドクターも数多く通う信頼のジム。
+                ほとんどの方に1年以上継続して頂き、多くの方が確実に成果を出しています。
+                私たちは“人生のパートナー”として、お客様一人ひとりの「なりたい自分」に本気で寄り添います。
+              </p>
+            </div>
+          </article>
         </div>
       </div>
     </section>
 
     <!-- Jobs -->
-    <section class="section section-alt" id="jobs">
+    <section class="section" id="jobs">
       <div class="container">
         <div class="section-head">
           <p class="section-en">JOBS</p>
           <h2 class="section-title">募集職種</h2>
+          <p class="section-sub">この価値を共に届けてくれる<strong>明るく前向きな仲間</strong>を募集しています。</p>
+        </div>
+
+        <div class="welcome">
+          <p class="welcome-title">こんな方を歓迎します！</p>
+          <ul>
+            <li>トレーニングを通じて多くの人の人生をより良くしたい方</li>
+            <li>トレーナーという枠を超え、幅広く活躍したい方</li>
+            <li>健康と運動を通じて、日本をもっと元気にしたい方</li>
+          </ul>
         </div>
 
         <div class="jobs-grid">
           <article class="job-card">
-            <p class="job-tag">ENGINEER</p>
-            <h3>Webエンジニア</h3>
+            <p class="job-tag">TRAINER</p>
+            <h3>パーソナルトレーナー</h3>
             <p class="job-desc">
-              自社プロダクト・受託開発の両面で、フロントエンド／バックエンドの設計・実装を担います。
+              プライベートジムNeeDSにて、お客様一人ひとりに合わせたマンツーマンのトレーニング指導を担当いただきます。
             </p>
             <ul class="job-meta">
-              <li><strong>雇用形態</strong>正社員</li>
-              <li><strong>勤務地</strong>東京 / フルリモート可</li>
-              <li><strong>想定年収</strong>450万 〜 850万円</li>
+              <li><strong>雇用形態</strong>正社員 / 業務委託</li>
+              <li><strong>勤務地</strong>神戸市内各店舗</li>
+              <li><strong>想定年収</strong>経験・能力に応じて優遇</li>
+              <li><strong>研修</strong>毎月社内研修あり</li>
             </ul>
             <a href="#entry" class="job-link">応募する →</a>
           </article>
 
           <article class="job-card">
-            <p class="job-tag">DESIGN</p>
-            <h3>UI / UXデザイナー</h3>
+            <p class="job-tag">ATHLETE</p>
+            <h3>アスリート担当トレーナー</h3>
             <p class="job-desc">
-              ユーザー体験のリサーチから画面設計、UIデザインまで一貫して担当いただきます。
+              アスリートジムNeeDSにて、競技力向上を目指す選手のトレーニング・コンディショニングを担当いただきます。
             </p>
             <ul class="job-meta">
               <li><strong>雇用形態</strong>正社員</li>
-              <li><strong>勤務地</strong>東京 / フルリモート可</li>
-              <li><strong>想定年収</strong>420万 〜 720万円</li>
+              <li><strong>勤務地</strong>神戸市内</li>
+              <li><strong>想定年収</strong>経験・能力に応じて優遇</li>
+              <li><strong>歓迎</strong>競技経験・指導経験者</li>
             </ul>
             <a href="#entry" class="job-link">応募する →</a>
           </article>
 
           <article class="job-card">
-            <p class="job-tag">SALES</p>
-            <h3>法人営業 / CS</h3>
+            <p class="job-tag">JUNIOR</p>
+            <h3>ジュニアコーチ</h3>
             <p class="job-desc">
-              お客様の課題をヒアリングし、エンジニアと共に最適なソリューションをご提案いただきます。
+              NeeDSジュニアにて、小中学生向けの総合トレーニングプログラムの指導を担当いただきます。
             </p>
             <ul class="job-meta">
-              <li><strong>雇用形態</strong>正社員</li>
-              <li><strong>勤務地</strong>東京 / 大阪</li>
-              <li><strong>想定年収</strong>400万 〜 680万円</li>
+              <li><strong>雇用形態</strong>正社員 / アルバイト</li>
+              <li><strong>勤務地</strong>神戸市内</li>
+              <li><strong>想定年収</strong>経験・能力に応じて優遇</li>
+              <li><strong>歓迎</strong>子ども指導に関心がある方</li>
             </ul>
             <a href="#entry" class="job-link">応募する →</a>
           </article>
 
           <article class="job-card">
-            <p class="job-tag">NEW GRAD</p>
-            <h3>新卒採用（総合職）</h3>
+            <p class="job-tag">STAFF</p>
+            <h3>運営スタッフ / 受付</h3>
             <p class="job-desc">
-              入社後は3ヶ月の研修を経て、エンジニア・デザイナー・営業のいずれかに配属されます。
+              店舗運営・お客様対応・予約管理・SNS運用など、ジムの運営全般をサポートいただきます。
             </p>
             <ul class="job-meta">
-              <li><strong>雇用形態</strong>正社員</li>
-              <li><strong>勤務地</strong>東京</li>
-              <li><strong>想定年収</strong>初年度 360万円〜</li>
+              <li><strong>雇用形態</strong>正社員 / アルバイト</li>
+              <li><strong>勤務地</strong>神戸市内</li>
+              <li><strong>想定年収</strong>経験・能力に応じて優遇</li>
+              <li><strong>歓迎</strong>接客・SNS経験者</li>
             </ul>
             <a href="#entry" class="job-link">応募する →</a>
           </article>
@@ -163,7 +280,7 @@
     </section>
 
     <!-- Voice -->
-    <section class="section" id="voice">
+    <section class="section section-alt" id="voice">
       <div class="container">
         <div class="section-head">
           <p class="section-en">MEMBER'S VOICE</p>
@@ -172,28 +289,63 @@
 
         <div class="voice-grid">
           <article class="voice-card">
-            <div class="voice-avatar" style="background:#dce7ff;">K.S</div>
+            <div class="voice-avatar" style="background:#d6e6f5;">T.N</div>
             <blockquote>
-              「任せてもらえる範囲が広く、入社2年目でチームリーダーに。挑戦を後押しする空気があります。」
+              「毎月の研修会で常にアップデートできる環境。トレーニングだけでなく栄養やメンタルまで学べるので、トレーナーとしての幅が広がります。」
             </blockquote>
-            <p class="voice-profile">Webエンジニア / 2022年入社</p>
+            <p class="voice-profile">パーソナルトレーナー</p>
           </article>
 
           <article class="voice-card">
-            <div class="voice-avatar" style="background:#ffe0d6;">M.T</div>
+            <div class="voice-avatar" style="background:#e4eef7;">K.M</div>
             <blockquote>
-              「デザインもコードも横断的に関われるのが魅力。リモートでもチームの距離が近いです。」
+              「お客様が1年・2年と継続してくださるのは、本気で向き合っているから。“人生のパートナー”という言葉の意味を日々実感しています。」
             </blockquote>
-            <p class="voice-profile">UIデザイナー / 2020年入社</p>
+            <p class="voice-profile">アスリート担当トレーナー</p>
           </article>
 
           <article class="voice-card">
-            <div class="voice-avatar" style="background:#d9f5e4;">Y.N</div>
+            <div class="voice-avatar" style="background:#dfeaf3;">S.Y</div>
             <blockquote>
-              「お客様の課題解決を一番近くで見届けられる営業職。社内の連携がスムーズで提案がしやすい。」
+              「子どもたちの『できた！』の瞬間に立ち会えるのが一番のやりがい。NeeDSジュニアで次世代アスリートを育てています。」
             </blockquote>
-            <p class="voice-profile">法人営業 / 2019年入社</p>
+            <p class="voice-profile">ジュニアコーチ</p>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Message from CEO -->
+    <section class="section" id="message">
+      <div class="container">
+        <div class="section-head">
+          <p class="section-en">MESSAGE</p>
+          <h2 class="section-title">代表からのメッセージ</h2>
+        </div>
+        <div class="message-box">
+          <div class="message-photo" data-img="assets/ceo.jpg">
+            <span>CEO</span>
+          </div>
+          <div class="message-body">
+            <p>
+              はじめまして。株式会社エヌデイエス代表の中務です。
+              私たちは「トレーニングジムNeeDS」を中心に、街の方からプロ選手・トップアスリート、ジュニアや学生アスリートまで、
+              幅広い世代の“健康”“夢の実現”をサポートしています。
+            </p>
+            <p>
+              NeeDSが掲げるミッションは「関わる人々の人生をより良く変える」こと。
+              一人ひとりの可能性を信じ、自分のことを好きになれる場所——それが我々の目指す姿です。
+            </p>
+            <p>
+              お客様、選手、そしてスタッフ。関わるすべての人の人生にポジティブな変化を与えるために、日々本気で向き合っています。
+              神戸をもっと健康で、もっと輝く街に。この街から世界へ羽ばたく選手を育て、人々が誇れる神戸の未来づくりに力を尽くしていきます。
+              我々は、これからも挑戦し続けます。
+            </p>
+            <p class="message-sign">
+              株式会社エヌデイエス<br />
+              代表取締役　中務 正幸
+            </p>
+          </div>
         </div>
       </div>
     </section>
@@ -221,7 +373,7 @@
           <div class="form-row">
             <label>
               <span>メールアドレス <em>必須</em></span>
-              <input type="email" name="email" required placeholder="example@saiyo.co.jp" />
+              <input type="email" name="email" required placeholder="example@needs.co.jp" />
             </label>
             <label>
               <span>電話番号</span>
@@ -232,16 +384,16 @@
             <span>希望職種 <em>必須</em></span>
             <select name="position" required>
               <option value="">選択してください</option>
-              <option>Webエンジニア</option>
-              <option>UI / UXデザイナー</option>
-              <option>法人営業 / CS</option>
-              <option>新卒採用（総合職）</option>
+              <option>パーソナルトレーナー</option>
+              <option>アスリート担当トレーナー</option>
+              <option>ジュニアコーチ</option>
+              <option>運営スタッフ / 受付</option>
               <option>その他</option>
             </select>
           </label>
           <label class="form-full">
             <span>志望動機・自己PR</span>
-            <textarea name="message" rows="6" placeholder="ご自身の経験や、当社に興味を持った理由をお聞かせください。"></textarea>
+            <textarea name="message" rows="6" placeholder="ご自身の経験や、NeeDSに興味を持った理由をお聞かせください。"></textarea>
           </label>
           <label class="form-check">
             <input type="checkbox" name="agree" required />
@@ -257,10 +409,11 @@
   <footer class="site-footer">
     <div class="container footer-inner">
       <div>
-        <p class="logo">SAIYO<span>.</span></p>
-        <p class="footer-addr">〒100-0000 東京都千代田区サンプル1-2-3 サイヨウビル</p>
+        <p class="footer-logo">NeeDS</p>
+        <p class="footer-company">株式会社エヌデイエス</p>
+        <p class="footer-addr">神戸市／パーソナルトレーニングジム NeeDS</p>
       </div>
-      <small>&copy; 2026 SAIYO Inc. All rights reserved.</small>
+      <small>&copy; 2026 NeeDS Inc. All rights reserved.</small>
     </div>
   </footer>
 
