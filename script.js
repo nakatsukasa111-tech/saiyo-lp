@@ -1,6 +1,6 @@
-// ----------------------------------------
+// ============================================
 // Header: add shadow on scroll
-// ----------------------------------------
+// ============================================
 const header = document.getElementById('siteHeader');
 const updateHeader = () => {
   if (window.scrollY > 10) header.classList.add('scrolled');
@@ -9,9 +9,9 @@ const updateHeader = () => {
 window.addEventListener('scroll', updateHeader, { passive: true });
 updateHeader();
 
-// ----------------------------------------
+// ============================================
 // Mobile nav toggle
-// ----------------------------------------
+// ============================================
 const navToggle = document.getElementById('navToggle');
 const nav = document.getElementById('nav');
 navToggle.addEventListener('click', () => {
@@ -21,20 +21,11 @@ nav.querySelectorAll('a').forEach((a) => {
   a.addEventListener('click', () => nav.classList.remove('open'));
 });
 
-// ----------------------------------------
-// Apply data-img attributes as background-image
-// (assets/xxx.jpg をフォルダに置けば自動で表示されます)
-// ----------------------------------------
-document.querySelectorAll('[data-img]').forEach((el) => {
-  const src = el.getAttribute('data-img');
-  if (src) el.style.setProperty('--bg', `url("${src}")`);
-});
-
-// ----------------------------------------
+// ============================================
 // Fade-in on scroll (IntersectionObserver)
-// ----------------------------------------
+// ============================================
 const fadeTargets = document.querySelectorAll(
-  '.section-head, .about-text, .about-stats li, .service-card, .mvv-item, .feature-card, .welcome, .job-card, .voice-card, .message-box, .entry-form'
+  '.section-head, .about-media, .about-text, .feature-card, .welcome, .job-card, .voice-card, .entry-form'
 );
 fadeTargets.forEach((el) => {
   el.style.opacity = '0';
@@ -57,9 +48,9 @@ const io = new IntersectionObserver(
 );
 fadeTargets.forEach((el) => io.observe(el));
 
-// ----------------------------------------
+// ============================================
 // Entry form (client-side only demo)
-// ----------------------------------------
+// ============================================
 const form = document.getElementById('entryForm');
 const note = document.getElementById('formNote');
 
@@ -84,7 +75,6 @@ form.addEventListener('submit', (e) => {
     return;
   }
 
-  // Demo success (replace with real API call as needed)
   note.textContent = 'ご応募ありがとうございます。内容を確認のうえご連絡いたします。';
   note.classList.add('success');
   form.reset();
