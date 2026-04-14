@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RECRUIT | 株式会社サイヨウ 採用サイト</title>
+  <meta name="description" content="株式会社サイヨウの採用情報。私たちと一緒に未来をつくる仲間を募集しています。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <a href="#top" class="logo">SAIYO<span>.</span></a>
+      <nav class="nav" id="nav">
+        <ul>
+          <li><a href="#about">会社紹介</a></li>
+          <li><a href="#jobs">募集職種</a></li>
+          <li><a href="#voice">社員の声</a></li>
+          <li><a href="#entry">応募フォーム</a></li>
+        </ul>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="メニューを開く">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-bg"></div>
+      <div class="container hero-inner">
+        <p class="hero-eyebrow">RECRUITING 2026</p>
+        <h1 class="hero-title">
+          つくるのは、<br />
+          <span class="accent">あなたと、未来。</span>
+        </h1>
+        <p class="hero-lead">
+          テクノロジーで社会に新しい価値を届ける。<br />
+          私たちと一緒に、次の時代をつくりませんか。
+        </p>
+        <div class="hero-cta">
+          <a href="#entry" class="btn btn-primary">エントリーする</a>
+          <a href="#about" class="btn btn-ghost">会社を知る</a>
+        </div>
+      </div>
+      <a href="#about" class="scroll-indicator" aria-label="スクロール">
+        <span></span>
+      </a>
+    </section>
+
+    <!-- About -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-head">
+          <p class="section-en">ABOUT US</p>
+          <h2 class="section-title">会社紹介</h2>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-text">
+            <h3>人を、技術を、未来を育てる会社。</h3>
+            <p>
+              株式会社サイヨウは、Webアプリケーション開発・DX支援・人材育成を軸に事業を展開するITカンパニーです。
+              「人を大切にする」を理念に掲げ、社員一人ひとりの成長を会社の成長と捉えています。
+            </p>
+            <p>
+              若手もベテランも、フラットに意見を交わし、挑戦できる環境。
+              あなたの「やってみたい」を形にできる場所が、ここにあります。
+            </p>
+          </div>
+          <ul class="about-stats">
+            <li>
+              <span class="num">2012</span>
+              <span class="label">設立年</span>
+            </li>
+            <li>
+              <span class="num">180<small>名</small></span>
+              <span class="label">社員数</span>
+            </li>
+            <li>
+              <span class="num">98<small>%</small></span>
+              <span class="label">定着率</span>
+            </li>
+            <li>
+              <span class="num">12<small>期</small></span>
+              <span class="label">連続増収</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Jobs -->
+    <section class="section section-alt" id="jobs">
+      <div class="container">
+        <div class="section-head">
+          <p class="section-en">JOBS</p>
+          <h2 class="section-title">募集職種</h2>
+        </div>
+
+        <div class="jobs-grid">
+          <article class="job-card">
+            <p class="job-tag">ENGINEER</p>
+            <h3>Webエンジニア</h3>
+            <p class="job-desc">
+              自社プロダクト・受託開発の両面で、フロントエンド／バックエンドの設計・実装を担います。
+            </p>
+            <ul class="job-meta">
+              <li><strong>雇用形態</strong>正社員</li>
+              <li><strong>勤務地</strong>東京 / フルリモート可</li>
+              <li><strong>想定年収</strong>450万 〜 850万円</li>
+            </ul>
+            <a href="#entry" class="job-link">応募する →</a>
+          </article>
+
+          <article class="job-card">
+            <p class="job-tag">DESIGN</p>
+            <h3>UI / UXデザイナー</h3>
+            <p class="job-desc">
+              ユーザー体験のリサーチから画面設計、UIデザインまで一貫して担当いただきます。
+            </p>
+            <ul class="job-meta">
+              <li><strong>雇用形態</strong>正社員</li>
+              <li><strong>勤務地</strong>東京 / フルリモート可</li>
+              <li><strong>想定年収</strong>420万 〜 720万円</li>
+            </ul>
+            <a href="#entry" class="job-link">応募する →</a>
+          </article>
+
+          <article class="job-card">
+            <p class="job-tag">SALES</p>
+            <h3>法人営業 / CS</h3>
+            <p class="job-desc">
+              お客様の課題をヒアリングし、エンジニアと共に最適なソリューションをご提案いただきます。
+            </p>
+            <ul class="job-meta">
+              <li><strong>雇用形態</strong>正社員</li>
+              <li><strong>勤務地</strong>東京 / 大阪</li>
+              <li><strong>想定年収</strong>400万 〜 680万円</li>
+            </ul>
+            <a href="#entry" class="job-link">応募する →</a>
+          </article>
+
+          <article class="job-card">
+            <p class="job-tag">NEW GRAD</p>
+            <h3>新卒採用（総合職）</h3>
+            <p class="job-desc">
+              入社後は3ヶ月の研修を経て、エンジニア・デザイナー・営業のいずれかに配属されます。
+            </p>
+            <ul class="job-meta">
+              <li><strong>雇用形態</strong>正社員</li>
+              <li><strong>勤務地</strong>東京</li>
+              <li><strong>想定年収</strong>初年度 360万円〜</li>
+            </ul>
+            <a href="#entry" class="job-link">応募する →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Voice -->
+    <section class="section" id="voice">
+      <div class="container">
+        <div class="section-head">
+          <p class="section-en">MEMBER'S VOICE</p>
+          <h2 class="section-title">社員の声</h2>
+        </div>
+
+        <div class="voice-grid">
+          <article class="voice-card">
+            <div class="voice-avatar" style="background:#dce7ff;">K.S</div>
+            <blockquote>
+              「任せてもらえる範囲が広く、入社2年目でチームリーダーに。挑戦を後押しする空気があります。」
+            </blockquote>
+            <p class="voice-profile">Webエンジニア / 2022年入社</p>
+          </article>
+
+          <article class="voice-card">
+            <div class="voice-avatar" style="background:#ffe0d6;">M.T</div>
+            <blockquote>
+              「デザインもコードも横断的に関われるのが魅力。リモートでもチームの距離が近いです。」
+            </blockquote>
+            <p class="voice-profile">UIデザイナー / 2020年入社</p>
+          </article>
+
+          <article class="voice-card">
+            <div class="voice-avatar" style="background:#d9f5e4;">Y.N</div>
+            <blockquote>
+              「お客様の課題解決を一番近くで見届けられる営業職。社内の連携がスムーズで提案がしやすい。」
+            </blockquote>
+            <p class="voice-profile">法人営業 / 2019年入社</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Entry -->
+    <section class="section section-dark" id="entry">
+      <div class="container">
+        <div class="section-head section-head-light">
+          <p class="section-en">ENTRY</p>
+          <h2 class="section-title">応募フォーム</h2>
+          <p class="section-sub">下記フォームよりお気軽にご応募ください。2営業日以内にご連絡いたします。</p>
+        </div>
+
+        <form class="entry-form" id="entryForm" novalidate>
+          <div class="form-row">
+            <label>
+              <span>お名前 <em>必須</em></span>
+              <input type="text" name="name" required placeholder="山田 太郎" />
+            </label>
+            <label>
+              <span>フリガナ</span>
+              <input type="text" name="kana" placeholder="ヤマダ タロウ" />
+            </label>
+          </div>
+          <div class="form-row">
+            <label>
+              <span>メールアドレス <em>必須</em></span>
+              <input type="email" name="email" required placeholder="example@saiyo.co.jp" />
+            </label>
+            <label>
+              <span>電話番号</span>
+              <input type="tel" name="tel" placeholder="090-0000-0000" />
+            </label>
+          </div>
+          <label class="form-full">
+            <span>希望職種 <em>必須</em></span>
+            <select name="position" required>
+              <option value="">選択してください</option>
+              <option>Webエンジニア</option>
+              <option>UI / UXデザイナー</option>
+              <option>法人営業 / CS</option>
+              <option>新卒採用（総合職）</option>
+              <option>その他</option>
+            </select>
+          </label>
+          <label class="form-full">
+            <span>志望動機・自己PR</span>
+            <textarea name="message" rows="6" placeholder="ご自身の経験や、当社に興味を持った理由をお聞かせください。"></textarea>
+          </label>
+          <label class="form-check">
+            <input type="checkbox" name="agree" required />
+            <span>プライバシーポリシーに同意します <em>必須</em></span>
+          </label>
+          <button type="submit" class="btn btn-primary btn-block">応募内容を送信する</button>
+          <p class="form-note" id="formNote" role="status"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <p class="logo">SAIYO<span>.</span></p>
+        <p class="footer-addr">〒100-0000 東京都千代田区サンプル1-2-3 サイヨウビル</p>
+      </div>
+      <small>&copy; 2026 SAIYO Inc. All rights reserved.</small>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
