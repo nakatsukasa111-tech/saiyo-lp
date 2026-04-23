@@ -3,34 +3,28 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>RECRUIT | 株式会社エヌデイエス（NeeDS）採用サイト</title>
-  <meta name="description" content="神戸のパーソナルトレーニングジムNeeDS（株式会社エヌデイエス）の採用サイト。身体づくりを通じて人々の人生をより良く変える仲間を募集しています。" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <title>RECRUIT | NeeDS（ニーズ）採用サイト — パーソナルトレーナー募集</title>
+  <meta name="description" content="神戸のパーソナルトレーニングジムNeeDS。元阪神タイガース契約トレーナーが率いる環境で、本物のトレーナーキャリアを。正社員月給20〜30万円。" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <!-- =====================
-       Header (Fixed Nav)
-  ====================== -->
+
+  <!-- ===== Header ===== -->
   <header class="site-header" id="siteHeader">
     <div class="container header-inner">
       <a href="#top" class="logo">
         <span class="logo-mark">N</span>
         <span class="logo-text">NeeDS</span>
       </a>
-
       <nav class="nav" id="nav">
         <ul>
-          <li><a href="#about">会社紹介</a></li>
-          <li><a href="#features">特徴</a></li>
-          <li><a href="#jobs">募集職種</a></li>
-          <li><a href="#voice">社員の声</a></li>
-          <li><a href="#entry" class="nav-cta">応募する</a></li>
+          <li><a href="#reasons">選ばれる理由</a></li>
+          <li><a href="#about">NeeDSとは</a></li>
+          <li><a href="#training">研修制度</a></li>
+          <li><a href="#jobs">募集要項</a></li>
+          <li><a href="#entry" class="nav-cta">ENTRY</a></li>
         </ul>
       </nav>
-
       <button class="nav-toggle" id="navToggle" aria-label="メニューを開く">
         <span></span><span></span><span></span>
       </button>
@@ -39,334 +33,534 @@
 
   <main id="top">
 
-    <!-- =====================
-         Hero
-    ====================== -->
+    <!-- ============================================================
+         01: HERO / FV — NAORU Style (Staff Photos + Copy + Badges)
+    ============================================================= -->
     <section class="hero">
-      <div class="hero-shape hero-shape-1"></div>
-      <div class="hero-shape hero-shape-2"></div>
-      <div class="hero-grid"></div>
-      <div class="container hero-inner">
-        <p class="hero-eyebrow">RECRUIT 2026</p>
-        <h1 class="hero-title">
-          自分のことが<br />
-          <span class="accent">好きになる場所、</span><br class="sp-only" />NeeDS
+      <!-- Staff Photos Row -->
+      <div class="hero-staff">
+        <div class="hero-staff-item">
+          <div class="hero-staff-label">代表取締役<br><strong>中務 正幸</strong></div>
+          <div class="hero-staff-photo"><div class="hero-staff-photo-icon">👤</div>中務さん写真</div>
+        </div>
+        <div class="hero-staff-item">
+          <div class="hero-staff-label">アスリートジム<br><strong>松浦 恭平</strong></div>
+          <div class="hero-staff-photo"><div class="hero-staff-photo-icon">👤</div>松浦さん写真</div>
+        </div>
+        <div class="hero-staff-item">
+          <div class="hero-staff-label">プライベートジム<br><strong>吉田 朝子</strong></div>
+          <div class="hero-staff-photo"><div class="hero-staff-photo-icon">👤</div>吉田さん写真</div>
+        </div>
+        <div class="hero-staff-item">
+          <div class="hero-staff-label">プライベートジム<br><strong>塩崎 優子</strong></div>
+          <div class="hero-staff-photo"><div class="hero-staff-photo-icon">👤</div>塩崎さん写真</div>
+        </div>
+        <div class="hero-staff-item">
+          <div class="hero-staff-label">プライベートジム<br><strong>桃尾 侑佳里</strong></div>
+          <div class="hero-staff-photo"><div class="hero-staff-photo-icon">👤</div>桃尾さん写真</div>
+        </div>
+        <div class="hero-staff-item">
+          <div class="hero-staff-label">マネジャー<br><strong>成清 愛</strong></div>
+          <div class="hero-staff-photo"><div class="hero-staff-photo-icon">👤</div>成清さん写真</div>
+        </div>
+      </div>
+
+      <!-- Catchcopy -->
+      <div class="hero-copy">
+        <h1 class="hero-catch">
+          トレーナーの<em>本気</em>が報われる場所で、<br />新しいキャリアを。
         </h1>
-        <p class="hero-lead">
-          身体づくりを通じて、人々の人生をより良く変える。<br />
-          私たちと一緒に働く仲間を募集しています。
-        </p>
-        <div class="hero-cta">
-          <a href="#entry" class="btn btn-primary">応募する</a>
-          <a href="#about" class="btn btn-outline">会社を知る</a>
+      </div>
+
+      <!-- Badges -->
+      <div class="hero-badges">
+        <div class="hero-badge">
+          <div class="hero-badge-main">元プロ野球<br>トレーナー<br>直伝</div>
+        </div>
+        <div class="hero-badge">
+          <div class="hero-badge-main">神戸で<br>10年以上<br>の実績</div>
+        </div>
+        <div class="hero-badge">
+          <div class="hero-badge-main">充実の<br>福利厚生<br>&amp;研修</div>
         </div>
       </div>
-      <a href="#about" class="scroll-indicator" aria-label="下へスクロール">
-        <span></span>
-      </a>
+
+      <!-- Salary Highlight -->
+      <div class="hero-salary">
+        <div class="hero-salary-label">安定した給与体系</div>
+        <div class="hero-salary-num">
+          月給<span data-count="20" class="counter">0</span>〜<span data-count="30" class="counter">0</span><small>万円以上</small>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="hero-cta-area">
+        <a href="#entry" class="btn btn-orange">応募する　＞</a>
+        <div class="hero-cta-note">相談だけでもOK｜2営業日以内にご連絡</div>
+      </div>
     </section>
 
-    <!-- =====================
-         About
-    ====================== -->
-    <section class="section" id="about">
+    <!-- ============================================================
+         02: 選ばれる理由 (NAORU-Style: Number + Title + Body)
+    ============================================================= -->
+    <section class="section section-white bg-marble" id="reasons">
       <div class="container">
-        <div class="section-head">
-          <p class="section-en">ABOUT US</p>
-          <h2 class="section-title">会社紹介</h2>
-          <p class="section-desc">神戸のトレーニングジムといえばNeeDS</p>
+        <div class="section-head fade-up">
+          <p class="section-en">WHY NeeDS</p>
+          <h2 class="section-title">NeeDSが選ばれる理由</h2>
+          <span class="section-title-bar"></span>
         </div>
 
-        <div class="about-grid">
-          <div class="about-media">
-            <div class="placeholder placeholder-1 ratio-4-3">
-              <span>画像（会社風景）</span>
+        <!-- REASON 01 -->
+        <div class="fade-up">
+          <div class="reason-num-header">01</div>
+          <div class="reason-num-sub">月給20〜30万円で安定した給与制度</div>
+          <div class="reason-body-text">
+            正社員月給20〜30万円。インセンティブ制度あり。社会保険完備・交通費支給・資格取得費補助など、<br class="pc-only">しっかりした待遇で長く安心して働けます。
+          </div>
+        </div>
+
+        <!-- Salary Model Cards -->
+        <div class="salary-models fade-up">
+          <div class="salary-card">
+            <div class="salary-card-head type-seisha">正社員の場合</div>
+            <div class="salary-card-body">
+              <div class="salary-card-age">23<small>歳</small> 1<small>年目</small></div>
+              <div class="salary-card-amount">20<small>万円〜</small></div>
+              <div class="salary-card-note">未経験スタート・研修充実</div>
             </div>
           </div>
-          <div class="about-text">
-            <h3>身体づくりを通じて、<br />人々の人生をより良く変える。</h3>
-            <p>
-              神戸で10年以上の指導実績を誇るNeeDS（ニーズ）では、お客様に合わせたトレーニングをご提供しております。
-              独自のメソッドで機能的な身体づくりはもちろん、健康の維持・向上、ダイエットやスポーツパフォーマンス向上まで、幅広く対応いたします。
-            </p>
-            <p>
-              NeeDSは、運動やトレーニングを通じて「人々の人生を変えること」を使命としています。
-              長年の実績から培った独自メソッドを軸に、コンディショニングや動き作りを行うパーソナルトレーニングジムです。
-            </p>
-            <ul class="about-stats">
-              <li><span class="num">10<small>年+</small></span><span class="label">指導実績</span></li>
-              <li><span class="num">3<small>業態</small></span><span class="label">サービス展開</span></li>
-              <li><span class="num">1<small>年+</small></span><span class="label">継続率</span></li>
-            </ul>
+          <div class="salary-card">
+            <div class="salary-card-head type-leader">リーダーの場合</div>
+            <div class="salary-card-body">
+              <div class="salary-card-age">27<small>歳</small> 3<small>年目</small></div>
+              <div class="salary-card-amount">25<small>万円〜</small></div>
+              <div class="salary-card-note">指導スキルUP＋インセンティブ</div>
+            </div>
+          </div>
+          <div class="salary-card">
+            <div class="salary-card-head type-manager">拠点マネジャーの場合</div>
+            <div class="salary-card-body">
+              <div class="salary-card-age">30<small>歳</small> 5<small>年目</small></div>
+              <div class="salary-card-amount">30<small>万円〜</small></div>
+              <div class="salary-card-note">大阪展開時のリーダー候補</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="reason-divider"></div>
+
+        <!-- REASON 02 -->
+        <div class="fade-up">
+          <div class="reason-num-header">02</div>
+          <div class="reason-num-sub">元阪神タイガース契約トレーナーが率いる研修環境</div>
+          <div class="reason-body-text">
+            代表の中務は阪神タイガースと契約した実績を持つヘッドトレーナー。さらにメジャーリーグトレーナー・元プロ野球コーチなど国内トップレベルのアドバイザーが在籍。毎月の勉強会で、他のジムでは得られない知識と技術が身につきます。
+          </div>
+        </div>
+
+        <div class="reason-divider"></div>
+
+        <!-- REASON 03 -->
+        <div class="fade-up">
+          <div class="reason-num-header">03</div>
+          <div class="reason-num-sub">ジュニアからプロまで、幅広い指導経験</div>
+          <div class="reason-body-text">
+            小学生のジュニアアスリート、一般の健康づくりの方、プロを目指す競技者まで。<br class="pc-only">これほど多様な指導経験が積める環境は、関西でもほぼありません。
+          </div>
+        </div>
+
+        <div class="reason-divider"></div>
+
+        <!-- REASON 04 -->
+        <div class="fade-up">
+          <div class="reason-num-header">04</div>
+          <div class="reason-num-sub">神戸発、関西圏へ拡大中 — 一緒に作る未来</div>
+          <div class="reason-body-text">
+            10年以上の実績を持つNeeDSは、2027年8店舗・2028年15店舗への拡大を計画中。<br class="pc-only">早期入社で拠点リーダーやマネジメントへのキャリアパスが開かれています。
+          </div>
+        </div>
+
+        <!-- Comparison Table -->
+        <h3 style="text-align:center;font-size:1.1rem;font-weight:700;margin:48px 0 20px;color:var(--dark-heading)" class="fade-up">NeeDS vs 一般的なジム</h3>
+        <div class="fade-up" style="overflow-x:auto">
+          <table class="compare-table">
+            <thead>
+              <tr>
+                <th style="width:160px">比較項目</th>
+                <th>一般的なジム</th>
+                <th class="col-needs">NeeDS</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>給与</td>
+                <td class="compare-bad">月給18〜22万円が相場</td>
+                <td class="col-needs"><span class="compare-good">月給20〜30万円 ＋ インセンティブ</span></td>
+              </tr>
+              <tr>
+                <td>研修制度</td>
+                <td class="compare-bad">OJT中心・体系的でない</td>
+                <td class="col-needs"><span class="compare-good">毎月の勉強会＋入社時研修プログラム</span></td>
+              </tr>
+              <tr>
+                <td>指導者レベル</td>
+                <td class="compare-bad">社内トレーナーのみ</td>
+                <td class="col-needs"><span class="compare-good">元プロ野球・メジャーリーグトレーナーが直接指導</span></td>
+              </tr>
+              <tr>
+                <td>指導対象</td>
+                <td class="compare-bad">一般のお客様中心</td>
+                <td class="col-needs"><span class="compare-good">ジュニア〜プロアスリートまで幅広い</span></td>
+              </tr>
+              <tr>
+                <td>キャリアパス</td>
+                <td class="compare-bad">昇進機会が限定的</td>
+                <td class="col-needs"><span class="compare-good">拠点リーダー・マネジャーへの道</span></td>
+              </tr>
+              <tr>
+                <td>福利厚生</td>
+                <td class="compare-bad">最低限</td>
+                <td class="col-needs"><span class="compare-good">社保完備・交通費・資格取得費補助</span></td>
+              </tr>
+              <tr>
+                <td>資格支援</td>
+                <td class="compare-bad">自己負担</td>
+                <td class="col-needs"><span class="compare-good">NSCA・NESTA等の費用を会社が補助</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         03: NeeDSとは — MVV + 沿革タイムライン
+    ============================================================= -->
+    <section class="section section-gray bg-geo" id="about">
+      <div class="container">
+        <div class="section-head fade-up">
+          <p class="section-en">ABOUT NeeDS</p>
+          <h2 class="section-title">「自分のことが好きになれる場所」を、<br class="pc-only" />スタッフにも作りたい。</h2>
+          <span class="section-title-bar"></span>
+          <p class="section-desc">NeeDSのVision「自分のことが好きになる場所」は、お客様だけでなくスタッフにも当てはまります。</p>
+        </div>
+
+        <div class="mvv-grid fade-up">
+          <div class="mvv-card">
+            <div class="mvv-label">MISSION</div>
+            <div class="mvv-text">関わる人々の人生を<br />より良く変えること</div>
+          </div>
+          <div class="mvv-card">
+            <div class="mvv-label">VISION</div>
+            <div class="mvv-text">自分のことが<br />好きになる場所</div>
+          </div>
+          <div class="mvv-card">
+            <div class="mvv-label">VALUE</div>
+            <div class="mvv-text-sm">ワクワクする<br />プロ意識を持つ<br />チームプレイする</div>
+          </div>
+        </div>
+
+        <div class="about-facts fade-up" style="max-width:600px;margin:0 auto 48px">
+          <div class="about-fact">神戸六甲道エリアで<strong>10年以上</strong>の指導実績</div>
+          <div class="about-fact">ドクターも通う<strong>信頼のジム</strong></div>
+          <div class="about-fact">継続率の高さ（1年以上の継続が大多数）</div>
+          <div class="about-fact">3つのサービス展開（プライベート・アスリート・ジュニア）</div>
+          <div class="about-fact">大阪・関西圏へ拡大中</div>
+        </div>
+
+        <!-- Timeline -->
+        <h3 style="text-align:center;font-size:1rem;font-weight:700;margin-bottom:28px;color:var(--dark-heading)" class="fade-up">NeeDSの歩み</h3>
+        <div class="timeline fade-up">
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-year">1989年1月</div>
+            <div class="timeline-text">株式会社エヌデイエス 設立</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-year">2005年10月</div>
+            <div class="timeline-text">トレーニングジム開設</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-year">2010〜2012年</div>
+            <div class="timeline-text">ヘッドトレーナー中務が<strong>阪神タイガース</strong>と契約</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-year">2013年1月</div>
+            <div class="timeline-text">ジム＆スタジオNeeDS（現アスリートジムNeeDS 本店）開設</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-year">2021年1月</div>
+            <div class="timeline-text">プライベートジムNeeDS 六甲道店 開設</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-year">2023年10月</div>
+            <div class="timeline-text">プライベートジムNeeDS 六甲風の郷店 開設</div>
+          </div>
+          <div class="timeline-item future">
+            <div class="timeline-dot"></div>
+            <div class="timeline-year">2027年（計画）</div>
+            <div class="timeline-text">8店舗へ拡大予定</div>
+          </div>
+          <div class="timeline-item future">
+            <div class="timeline-dot"></div>
+            <div class="timeline-year">2028年10月（計画）</div>
+            <div class="timeline-text">15店舗へ拡大予定</div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- =====================
-         Features
-    ====================== -->
-    <section class="section section-alt" id="features">
+    <!-- ============================================================
+         04: 福利厚生
+    ============================================================= -->
+    <section class="section section-white" id="benefits">
       <div class="container">
-        <div class="section-head">
-          <p class="section-en">FEATURES</p>
-          <h2 class="section-title">NeeDSの3つの特徴</h2>
-          <p class="section-desc">選ばれ続ける理由があります</p>
+        <div class="section-head fade-up">
+          <p class="section-en">BENEFITS</p>
+          <h2 class="section-title">安心して、長く働ける環境を<br class="sp-only" />整えています。</h2>
+          <span class="section-title-bar"></span>
         </div>
-
-        <div class="features">
-          <article class="feature-card">
-            <div class="placeholder ratio-4-3">
-              <span class="feature-badge">FEATURE 01</span>
-              <span>画像（トレーナー指導風景）</span>
-            </div>
-            <div class="feature-body">
-              <p class="feature-no">01</p>
-              <h3>経験豊富なトレーナーが<br />マンツーマンで徹底サポート</h3>
-              <p>
-                プロの現場で活躍するトレーナーや専門家を外部アドバイザーとして迎え、毎月研修会を実施。
-                トレーニング・栄養・メンタル・障害予防など多角的な学びを通じて、お客様一人ひとりに最適なサポートを行います。
-              </p>
-            </div>
-          </article>
-
-          <article class="feature-card reverse">
-            <div class="placeholder ratio-4-3">
-              <span class="feature-badge">FEATURE 02</span>
-              <span>画像（独自メソッド実施中）</span>
-            </div>
-            <div class="feature-body">
-              <p class="feature-no">02</p>
-              <h3>プロアスリートが認めた<br />独自メソッド導入</h3>
-              <p>
-                トップアスリートの指導経験をもとに開発された、NeeDS独自のメソッド。
-                筋力・柔軟性・体幹・バランスを総合的に鍛え、機能的な身体へ導きます。
-              </p>
-            </div>
-          </article>
-
-          <article class="feature-card">
-            <div class="placeholder ratio-4-3">
-              <span class="feature-badge">FEATURE 03</span>
-              <span>画像（お客様との対話）</span>
-            </div>
-            <div class="feature-body">
-              <p class="feature-no">03</p>
-              <h3>圧倒的な実績と継続率</h3>
-              <p>
-                地域で10年以上の実績を持ち、ドクターも数多く通う信頼のジム。
-                ほとんどの方に1年以上継続して頂き、多くの方が確実に成果を出しています。
-                “人生のパートナー”として、お客様の「なりたい自分」に本気で寄り添います。
-              </p>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- =====================
-         Jobs
-    ====================== -->
-    <section class="section" id="jobs">
-      <div class="container">
-        <div class="section-head">
-          <p class="section-en">JOBS</p>
-          <h2 class="section-title">募集職種</h2>
-          <p class="section-desc">明るく前向きな仲間を募集しています</p>
-        </div>
-
-        <div class="welcome">
-          <p class="welcome-title">こんな方を歓迎します</p>
-          <ul>
-            <li>トレーニングを通じて多くの人の人生をより良くしたい方</li>
-            <li>トレーナーという枠を超え、幅広く活躍したい方</li>
-            <li>健康と運動を通じて、日本をもっと元気にしたい方</li>
-          </ul>
-        </div>
-
-        <div class="jobs-grid">
-          <article class="job-card">
-            <p class="job-tag">TRAINER</p>
-            <h3>パーソナルトレーナー</h3>
-            <p class="job-desc">お客様一人ひとりに合わせたマンツーマンのトレーニング指導を担当。</p>
-            <ul class="job-meta">
-              <li><strong>雇用形態</strong>正社員 / 業務委託</li>
-              <li><strong>勤務地</strong>神戸市内各店舗</li>
-              <li><strong>年収</strong>経験・能力に応じて優遇</li>
-            </ul>
-            <a href="#entry" class="job-link">応募する<span>→</span></a>
-          </article>
-
-          <article class="job-card">
-            <p class="job-tag">ATHLETE</p>
-            <h3>アスリート担当トレーナー</h3>
-            <p class="job-desc">競技力向上を目指す選手のトレーニング・コンディショニングを担当。</p>
-            <ul class="job-meta">
-              <li><strong>雇用形態</strong>正社員</li>
-              <li><strong>勤務地</strong>神戸市内</li>
-              <li><strong>年収</strong>経験・能力に応じて優遇</li>
-            </ul>
-            <a href="#entry" class="job-link">応募する<span>→</span></a>
-          </article>
-
-          <article class="job-card">
-            <p class="job-tag">JUNIOR</p>
-            <h3>ジュニアコーチ</h3>
-            <p class="job-desc">小中学生向けの総合トレーニングプログラムの指導を担当。</p>
-            <ul class="job-meta">
-              <li><strong>雇用形態</strong>正社員 / アルバイト</li>
-              <li><strong>勤務地</strong>神戸市内</li>
-              <li><strong>年収</strong>経験・能力に応じて優遇</li>
-            </ul>
-            <a href="#entry" class="job-link">応募する<span>→</span></a>
-          </article>
-
-          <article class="job-card">
-            <p class="job-tag">STAFF</p>
-            <h3>運営スタッフ / 受付</h3>
-            <p class="job-desc">店舗運営・お客様対応・予約管理・SNS運用などを担当。</p>
-            <ul class="job-meta">
-              <li><strong>雇用形態</strong>正社員 / アルバイト</li>
-              <li><strong>勤務地</strong>神戸市内</li>
-              <li><strong>年収</strong>経験・能力に応じて優遇</li>
-            </ul>
-            <a href="#entry" class="job-link">応募する<span>→</span></a>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- =====================
-         Voice
-    ====================== -->
-    <section class="section section-alt" id="voice">
-      <div class="container">
-        <div class="section-head">
-          <p class="section-en">MEMBER'S VOICE</p>
-          <h2 class="section-title">社員の声</h2>
-          <p class="section-desc">NeeDSで働くスタッフに聞きました</p>
-        </div>
-
-        <div class="voice-grid">
-          <article class="voice-card">
-            <div class="placeholder placeholder-avatar">
-              <span>画像</span>
-            </div>
-            <blockquote>
-              「毎月の研修会で常にアップデートできる環境。トレーニングだけでなく栄養やメンタルまで学べるので、トレーナーとしての幅が広がります。」
-            </blockquote>
-            <p class="voice-name">T.N さん</p>
-            <p class="voice-profile">パーソナルトレーナー</p>
-          </article>
-
-          <article class="voice-card">
-            <div class="placeholder placeholder-avatar">
-              <span>画像</span>
-            </div>
-            <blockquote>
-              「お客様が1年・2年と継続してくださるのは、本気で向き合っているから。“人生のパートナー”という言葉の意味を日々実感しています。」
-            </blockquote>
-            <p class="voice-name">K.M さん</p>
-            <p class="voice-profile">アスリート担当トレーナー</p>
-          </article>
-
-          <article class="voice-card">
-            <div class="placeholder placeholder-avatar">
-              <span>画像</span>
-            </div>
-            <blockquote>
-              「子どもたちの『できた！』の瞬間に立ち会えるのが一番のやりがい。NeeDSジュニアで次世代アスリートを育てています。」
-            </blockquote>
-            <p class="voice-name">S.Y さん</p>
-            <p class="voice-profile">ジュニアコーチ</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- =====================
-         Entry (Form)
-    ====================== -->
-    <section class="section section-dark" id="entry">
-      <div class="container">
-        <div class="section-head section-head-light">
-          <p class="section-en">ENTRY</p>
-          <h2 class="section-title">応募フォーム</h2>
-          <p class="section-desc">2営業日以内にご連絡いたします</p>
-        </div>
-
-        <form class="entry-form" id="entryForm" novalidate>
-          <div class="form-row">
-            <label>
-              <span>お名前 <em>必須</em></span>
-              <input type="text" name="name" required placeholder="山田 太郎" />
-            </label>
-            <label>
-              <span>フリガナ</span>
-              <input type="text" name="kana" placeholder="ヤマダ タロウ" />
-            </label>
+        <div class="benefits-grid">
+          <div class="benefit-card fade-up">
+            <div class="benefit-icon">🏥</div>
+            <div class="benefit-title">社会保険完備</div>
+            <div class="benefit-desc">健康・厚生・雇用・労災</div>
           </div>
-          <div class="form-row">
-            <label>
-              <span>メールアドレス <em>必須</em></span>
-              <input type="email" name="email" required placeholder="example@needs.co.jp" />
-            </label>
-            <label>
-              <span>電話番号</span>
-              <input type="tel" name="tel" placeholder="090-0000-0000" />
-            </label>
+          <div class="benefit-card fade-up">
+            <div class="benefit-icon">🚃</div>
+            <div class="benefit-title">交通費全額支給</div>
+            <div class="benefit-desc">実費支給</div>
           </div>
-          <label class="form-full">
-            <span>希望職種 <em>必須</em></span>
-            <select name="position" required>
-              <option value="">選択してください</option>
-              <option>パーソナルトレーナー</option>
-              <option>アスリート担当トレーナー</option>
-              <option>ジュニアコーチ</option>
-              <option>運営スタッフ / 受付</option>
-              <option>その他</option>
-            </select>
-          </label>
-          <label class="form-full">
-            <span>志望動機・自己PR</span>
-            <textarea name="message" rows="6" placeholder="ご自身の経験や、NeeDSに興味を持った理由をお聞かせください。"></textarea>
-          </label>
-          <label class="form-check">
-            <input type="checkbox" name="agree" required />
-            <span>プライバシーポリシーに同意します <em>必須</em></span>
-          </label>
-          <button type="submit" class="btn btn-primary btn-block">応募内容を送信する</button>
-          <p class="form-note" id="formNote" role="status"></p>
-        </form>
+          <div class="benefit-card fade-up">
+            <div class="benefit-icon">📚</div>
+            <div class="benefit-title">資格取得費補助</div>
+            <div class="benefit-desc">NSCA・NESTA等</div>
+          </div>
+          <div class="benefit-card fade-up">
+            <div class="benefit-icon">🩺</div>
+            <div class="benefit-title">定期健康診断</div>
+            <div class="benefit-desc">年1回実施</div>
+          </div>
+          <div class="benefit-card fade-up">
+            <div class="benefit-icon">⚖️</div>
+            <div class="benefit-title">正社員 / アルバイト</div>
+            <div class="benefit-desc">ライフスタイルに合わせて選択</div>
+          </div>
+          <div class="benefit-card fade-up">
+            <div class="benefit-icon">📈</div>
+            <div class="benefit-title">キャリアアップ支援</div>
+            <div class="benefit-desc">大阪展開時のリーダー候補</div>
+          </div>
+        </div>
       </div>
     </section>
+
+    <!-- ============================================================
+         05: 研修・スキルアップ + アドバイザー
+    ============================================================= -->
+    <section class="section section-gray bg-marble" id="training">
+      <div class="container">
+        <div class="section-head fade-up">
+          <p class="section-en">TRAINING &amp; GROWTH</p>
+          <h2 class="section-title">元阪神タイガース契約トレーナーから<br class="sp-only" />直接学べる環境。</h2>
+          <span class="section-title-bar"></span>
+          <p class="section-desc">プロ野球・メジャーリーグの現場で活躍したトレーナーが毎月NeeDSで勉強会を開催。<br class="pc-only" />入社直後から、最前線の知識と技術に触れることができます。</p>
+        </div>
+
+        <h3 style="font-family:var(--font-en);font-size:.78rem;font-weight:700;letter-spacing:.15em;color:var(--accent-dark);text-align:center;margin-bottom:20px" class="fade-up">ADVISORS</h3>
+        <div class="advisors-scroll fade-up">
+          <div class="advisor-card">
+            <div class="ph ph-circle advisor-photo"><div class="ph-icon">👤</div>見邨直人さん</div>
+            <div class="advisor-name">見邨 直人</div>
+            <div class="advisor-role">プロ野球トレーナー</div>
+          </div>
+          <div class="advisor-card">
+            <div class="ph ph-circle advisor-photo"><div class="ph-icon">👤</div>福田紳一郎さん</div>
+            <div class="advisor-name">福田 紳一郎</div>
+            <div class="advisor-role">メジャーリーグトレーナー</div>
+          </div>
+          <div class="advisor-card">
+            <div class="ph ph-circle advisor-photo"><div class="ph-icon">👤</div>坂口直哉さん</div>
+            <div class="advisor-name">坂口 直哉</div>
+            <div class="advisor-role">元プロ野球コーチ</div>
+          </div>
+        </div>
+
+        <div class="training-cards fade-up">
+          <div class="training-card">→ <strong>入社時研修プログラム</strong>：NeeDSのメソッドと指導スタイルを丁寧に学ぶ</div>
+          <div class="training-card">→ <strong>毎月の勉強会</strong>：アドバイザー陣による最新トレーニング理論・技術講習</div>
+          <div class="training-card">→ <strong>外部セミナー費用補助</strong>：自己研鑽を会社がバックアップ</div>
+          <div class="training-card">→ <strong>多様な現場経験</strong>：ジュニア・一般・競技者と幅広く指導スキルを磨ける</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         06: スタッフの声 + 代表メッセージ
+    ============================================================= -->
+    <section class="section section-white" id="voice">
+      <div class="container">
+        <div class="section-head fade-up">
+          <p class="section-en">STAFF VOICE</p>
+          <h2 class="section-title">チームで高め合う、NeeDSの文化。</h2>
+          <span class="section-title-bar"></span>
+        </div>
+
+        <div class="voice-cards fade-up">
+          <div class="voice-card">
+            <div class="ph ph-circle voice-avatar"><div style="font-size:1.2rem">👤</div></div>
+            <div>
+              <div class="voice-name">塩崎 優子 <span>/ プライベートジムトレーナー</span></div>
+              <div class="voice-text">「スタッフ同士の仲がとてもよく、わからないことも気軽に相談できる環境です。お客様の反応が直接返ってくるのが何より嬉しい。」</div>
+            </div>
+          </div>
+          <div class="voice-card">
+            <div class="ph ph-circle voice-avatar"><div style="font-size:1.2rem">👤</div></div>
+            <div>
+              <div class="voice-name">松浦 恭平 <span>/ アスリートジムトレーナー</span></div>
+              <div class="voice-text">「アスリートから高齢の方まで関わるので、毎日が学びです。アドバイザーの先生から直接指導を受けられる機会は、本当に貴重だと思っています。」</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CEO Message -->
+        <div class="ceo-block fade-up">
+          <h3 style="font-family:var(--font-en);font-size:.78rem;font-weight:700;letter-spacing:.15em;color:var(--accent-dark);text-align:center;margin-bottom:24px">CEO MESSAGE</h3>
+          <div class="ceo-inner">
+            <div class="ph ph-circle ceo-photo"><div class="ph-icon">👤</div>中務さん</div>
+            <div>
+              <div class="ceo-name">中務 正幸 <span>/ 代表取締役・ヘッドトレーナー（元阪神タイガース契約）</span></div>
+              <div class="ceo-message">
+                「NeeDSは、みんなで高め合う場所です。トップアスリートから高齢者、ジュニアまで。こんなに幅広く関われる環境は、日本でもなかなかないと思っています。<br /><br />
+                スタッフの仲も良く、お客様の質も非常に高い。クレームがほとんどなく、感謝の言葉をいただける職場です。<br /><br />
+                あなたの成長が、NeeDSの未来を作る。一緒に、神戸から世界を目指しましょう。」
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         07: 募集要項
+    ============================================================= -->
+    <section class="section section-gray" id="jobs">
+      <div class="container">
+        <div class="section-head fade-up">
+          <p class="section-en">JOB DETAILS</p>
+          <h2 class="section-title">募集要項</h2>
+          <span class="section-title-bar"></span>
+        </div>
+
+        <div class="job-table fade-up">
+          <div class="job-row">
+            <div class="job-row-label">募集職種</div>
+            <div class="job-row-value">パーソナルトレーナー / アスリート系トレーナー</div>
+          </div>
+          <div class="job-row">
+            <div class="job-row-label">雇用形態</div>
+            <div class="job-row-value">正社員 / アルバイト（ライフスタイルに合わせて相談可）</div>
+          </div>
+          <div class="job-row">
+            <div class="job-row-label">給与</div>
+            <div class="job-row-value">月給 200,000〜300,000円（経験・スキルにより考慮）<br>別途インセンティブあり</div>
+          </div>
+          <div class="job-row">
+            <div class="job-row-label">勤務地</div>
+            <div class="job-row-value">神戸市灘区 六甲道エリア（3店舗）<br><span class="job-highlight">※ 大阪・関西圏への展開予定あり</span></div>
+          </div>
+          <div class="job-row">
+            <div class="job-row-label">応募資格</div>
+            <div class="job-row-value">未経験・無資格でも歓迎（入社後サポートあり）<br>資格保有者（NSCA・NESTA等）優遇<br>学生アルバイトも歓迎</div>
+          </div>
+          <div class="job-row">
+            <div class="job-row-label">求める人物像</div>
+            <div class="job-row-value">「人の役に立ちたい」という気持ちがある方<br>チームで高め合える方<br>成長意欲・向上心がある方</div>
+          </div>
+          <div class="job-row">
+            <div class="job-row-label">福利厚生</div>
+            <div class="job-row-value">社会保険完備 / 交通費支給 / 資格取得費補助 / 定期健康診断</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         08: 応募の流れ + CTA
+    ============================================================= -->
+    <section class="entry-section" id="entry">
+      <div class="container">
+        <div class="section-head fade-up">
+          <p class="section-en">APPLICATION</p>
+          <h2 class="section-title" style="color:#fff">まずは、気軽に話しかけてください。</h2>
+          <span class="section-title-bar" style="background:var(--orange)"></span>
+          <p class="section-desc">選考に不安がある方も、まずはLINEで相談だけでもOKです。</p>
+        </div>
+
+        <div class="flow-steps fade-up">
+          <div class="flow-step">
+            <div class="flow-num">1</div>
+            <div class="flow-text"><strong>LINEまたはフォームで応募</strong>（2分でOK。「話だけ聞きたい」もOK）</div>
+          </div>
+          <div class="flow-step">
+            <div class="flow-num">2</div>
+            <div class="flow-text"><strong>担当者からご連絡</strong>（通常2営業日以内）</div>
+          </div>
+          <div class="flow-step">
+            <div class="flow-num">3</div>
+            <div class="flow-text"><strong>面接・施設見学</strong>（神戸 六甲道の店舗にて）</div>
+          </div>
+          <div class="flow-step">
+            <div class="flow-num">4</div>
+            <div class="flow-text"><strong>採用決定・入社</strong>（入社時期は相談可）</div>
+          </div>
+        </div>
+
+        <div class="cta-final fade-up">
+          <a href="#" class="btn btn-orange" style="min-width:300px;padding:20px 48px;font-size:1.05rem">応募する　＞</a>
+          <div class="cta-note">相談だけでも大歓迎です。お気軽にどうぞ。</div>
+          <a href="#" class="cta-sub-link">採用フォームから応募する</a>
+        </div>
+      </div>
+    </section>
+
   </main>
 
-  <!-- =====================
-       Footer
-  ====================== -->
+  <!-- ===== Footer ===== -->
   <footer class="site-footer">
     <div class="container footer-inner">
       <div class="footer-brand">
-        <a href="#top" class="logo logo-footer">
+        <a href="#top" class="logo">
           <span class="logo-mark">N</span>
           <span class="logo-text">NeeDS</span>
         </a>
         <p class="footer-company">株式会社エヌデイエス</p>
-        <p class="footer-addr">神戸市／パーソナルトレーニングジム NeeDS</p>
+        <p class="footer-addr">〒657-0053 兵庫県神戸市灘区六甲町4-1-16</p>
       </div>
       <nav class="footer-nav">
-        <a href="#about">会社紹介</a>
-        <a href="#features">特徴</a>
-        <a href="#jobs">募集職種</a>
-        <a href="#voice">社員の声</a>
-        <a href="#entry">応募フォーム</a>
+        <a href="#reasons">選ばれる理由</a>
+        <a href="#about">NeeDSとは</a>
+        <a href="#training">研修制度</a>
+        <a href="#jobs">募集要項</a>
+        <a href="#entry">応募する</a>
       </nav>
     </div>
     <div class="container footer-copy">
       <small>&copy; 2026 NeeDS Inc. All rights reserved.</small>
     </div>
   </footer>
+
+  <!-- Fixed CTA (SP) -->
+  <div class="fixed-cta" id="fixedCta">
+    <a href="#entry" class="btn btn-orange btn-block">応募する（相談だけでもOK）</a>
+  </div>
 
   <script src="script.js"></script>
 </body>

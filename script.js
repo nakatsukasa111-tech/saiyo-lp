@@ -1,81 +1,109 @@
 // ============================================
-// Header: add shadow on scroll
+// NeeDS 採用LP — Script
 // ============================================
-const header = document.getElementById('siteHeader');
-const updateHeader = () => {
-  if (window.scrollY > 10) header.classList.add('scrolled');
-  else header.classList.remove('scrolled');
-};
-window.addEventListener('scroll', updateHeader, { passive: true });
-updateHeader();
 
-// ============================================
-// Mobile nav toggle
-// ============================================
-const navToggle = document.getElementById('navToggle');
-const nav = document.getElementById('nav');
-navToggle.addEventListener('click', () => {
-  nav.classList.toggle('open');
-});
-nav.querySelectorAll('a').forEach((a) => {
-  a.addEventListener('click', () => nav.classList.remove('open'));
-});
+(function () {
+  'use strict';
 
-// ============================================
-// Fade-in on scroll (IntersectionObserver)
-// ============================================
-const fadeTargets = document.querySelectorAll(
-  '.section-head, .about-media, .about-text, .feature-card, .welcome, .job-card, .voice-card, .entry-form'
-);
-fadeTargets.forEach((el) => {
-  el.style.opacity = '0';
-  el.style.transform = 'translateY(24px)';
-  el.style.transition = 'opacity .7s ease, transform .7s ease';
-});
-const io = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry, i) => {
-      if (entry.isIntersecting) {
-        setTimeout(() => {
-          entry.target.style.opacity = '1';
-          entry.target.style.transform = 'translateY(0)';
-        }, i * 60);
-        io.unobserve(entry.target);
+  // ── Header scroll shadow ──
+  var header = document.getElementById('siteHeader');
+  var fixedCta = document.getElementById('fixedCta');
+
+  function updateScroll() {
+    if (window.scrollY > 10) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+    // Show fixed CTA after scrolling past hero
+    if (fixedCta) {
+      fixedCta.style.transform =
+        window.scrollY > window.innerHeight * 0.7
+          ? 'translateY(0)'
+          : 'translateY(100%)';
+    }
+  }
+
+  if (fixedCta) {
+    fixedCta.style.transform = 'translateY(100%)';
+    fixedCta.style.transition = 'transform .3s ease';
+  }
+  window.addEventListener('scroll', updateScroll, { passive: true });
+  updateScroll();
+
+  // ── Mobile nav toggle ──
+  var navToggle = document.getElementById('navToggle');
+  var nav = document.getElementById('nav');
+
+  navToggle.addEventListener('click', function () {
+    nav.classList.toggle('open');
+  });
+  nav.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () {
+      nav.classList.remove('open');
+    });
+  });
+
+  // ── Fade-up on scroll (IntersectionObserver) ──
+  var fadeEls = document.querySelectorAll('.fade-up');
+
+  var fadeIO = new IntersectionObserver(
+    function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          fadeIO.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.1 }
+  );
+  fadeEls.forEach(function (el) { fadeIO.observe(el); });
+
+  // ── Counter animation ──
+  var counters = document.querySelectorAll('.counter, [data-count]');
+
+  var countIO = new IntersectionObserver(
+    function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        var el = entry.target;
+        var target = parseInt(el.getAttribute('data-count') || el.textContent, 10);
+        if (isNaN(target)) return;
+
+        var duration = 1200;
+        var start = performance.now();
+
+        function animate(now) {
+          var elapsed = now - start;
+          var progress = Math.min(elapsed / duration, 1);
+          var eased = 1 - Math.pow(1 - progress, 3);
+          el.textContent = Math.round(target * eased);
+          if (progress < 1) {
+            requestAnimationFrame(animate);
+          } else {
+            el.textContent = target;
+          }
+        }
+        requestAnimationFrame(animate);
+        countIO.unobserve(el);
+      });
+    },
+    { threshold: 0.5 }
+  );
+  counters.forEach(function (el) { countIO.observe(el); });
+
+  // ── Smooth scroll for anchor links ──
+  document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+    anchor.addEventListener('click', function (e) {
+      var href = anchor.getAttribute('href');
+      if (href === '#') return;
+      var target = document.querySelector(href);
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth' });
       }
     });
-  },
-  { threshold: 0.15 }
-);
-fadeTargets.forEach((el) => io.observe(el));
+  });
 
-// ============================================
-// Entry form (client-side only demo)
-// ============================================
-const form = document.getElementById('entryForm');
-const note = document.getElementById('formNote');
-
-form.addEventListener('submit', (e) => {
-  e.preventDefault();
-  note.classList.remove('success', 'error');
-
-  const data = new FormData(form);
-  const name = (data.get('name') || '').toString().trim();
-  const email = (data.get('email') || '').toString().trim();
-  const position = (data.get('position') || '').toString();
-  const agree = data.get('agree');
-
-  if (!name || !email || !position || !agree) {
-    note.textContent = '必須項目が未入力です。ご確認ください。';
-    note.classList.add('error');
-    return;
-  }
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-    note.textContent = 'メールアドレスの形式が正しくありません。';
-    note.classList.add('error');
-    return;
-  }
-
-  note.textContent = 'ご応募ありがとうございます。内容を確認のうえご連絡いたします。';
-  note.classList.add('success');
-  form.reset();
-});
+})();
