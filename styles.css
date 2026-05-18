@@ -474,20 +474,79 @@ h1,h2,h3,h4,p { margin: 0; }
 .benefits-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
+  gap: 20px;
 }
 .benefit-card {
+  position: relative;
   text-align: center;
   background: var(--white);
   border: 1px solid var(--border);
   border-radius: var(--r-md);
-  padding: 28px 16px;
-  transition: transform .3s, box-shadow .3s;
+  padding: 44px 22px 28px;
+  transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease;
+  overflow: hidden;
 }
-.benefit-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
-.benefit-icon { font-size: 2rem; margin-bottom: 10px; }
-.benefit-title { font-size: .92rem; font-weight: 700; margin-bottom: 4px; }
-.benefit-desc { font-size: .75rem; color: var(--gray); }
+.benefit-card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 50%;
+  transform: translateX(-50%);
+  width: 40px; height: 3px;
+  background: var(--accent);
+  border-radius: 0 0 3px 3px;
+  opacity: .85;
+  transition: width .35s ease, background-color .35s ease;
+}
+.benefit-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgba(64, 48, 32, .12), 0 2px 6px rgba(64, 48, 32, .06);
+  border-color: var(--accent-light);
+}
+.benefit-card:hover::before {
+  width: 64px;
+  background: var(--orange);
+}
+.benefit-num {
+  display: inline-block;
+  font-family: var(--font-en);
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: .22em;
+  color: var(--accent);
+  margin-bottom: 14px;
+}
+.benefit-icon {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 18px;
+  color: var(--blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.benefit-icon svg { width: 100%; height: 100%; display: block; }
+.benefit-card:hover .benefit-icon { color: var(--blue-dark); }
+.benefit-en {
+  font-family: var(--font-en);
+  font-size: .62rem;
+  font-weight: 600;
+  letter-spacing: .28em;
+  color: var(--accent-dark);
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+.benefit-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--dark-heading);
+  margin-bottom: 8px;
+  letter-spacing: .02em;
+}
+.benefit-desc {
+  font-size: .78rem;
+  color: var(--gray);
+  line-height: 1.65;
+}
 
 /* =========================================
    05: Training & Advisors
