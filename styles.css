@@ -3,7 +3,7 @@
    White/Bright Base · NAORU-inspired · Marble Texture
    ========================================= */
 
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700&family=Noto+Sans+JP:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@300;400;500&display=swap');
 
 :root {
   --blue: #1B5FA8;
@@ -437,23 +437,95 @@ h1,h2,h3,h4,p { margin: 0; }
 .mvv-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-  margin-bottom: 36px;
+  gap: 32px;
+  margin-bottom: 56px;
 }
 .mvv-card {
-  text-align: center;
-  background: var(--white);
-  border: 1px solid var(--border);
-  border-radius: var(--r-md);
-  padding: 28px 16px;
+  position: relative;
+  padding: 14px 14px 0 0;
+  transition: transform .45s cubic-bezier(.2,.7,.2,1);
+}
+.mvv-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: calc(100% - 14px);
+  height: calc(100% - 14px);
+  background: var(--accent);
+  z-index: 0;
+  transition: transform .45s cubic-bezier(.2,.7,.2,1);
+}
+.mvv-card-inner {
+  position: relative;
+  z-index: 1;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  box-shadow: 0 8px 22px rgba(64, 48, 32, .14);
+  transition: box-shadow .45s ease;
+}
+.mvv-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(.78) brightness(1.04);
+  transition: transform 1.2s cubic-bezier(.2,.7,.2,1);
+}
+.mvv-overlay {
+  position: absolute;
+  inset: 0;
+  padding: 22px 18px;
+  background: linear-gradient(to right,
+    rgba(45, 50, 56, .42) 0%,
+    rgba(45, 50, 56, .25) 35%,
+    rgba(45, 50, 56, .05) 70%,
+    transparent 100%);
+  display: flex;
+  flex-direction: column;
 }
 .mvv-label {
-  font-family: var(--font-en); font-size: .72rem;
-  font-weight: 700; letter-spacing: .15em;
-  color: var(--accent-dark); margin-bottom: 10px;
+  font-family: var(--font-en);
+  font-size: .68rem;
+  font-weight: 500;
+  letter-spacing: .32em;
+  color: rgba(255,255,255,.95);
+  margin-bottom: 14px;
+  text-shadow: 0 1px 3px rgba(0,0,0,.25);
 }
-.mvv-text { font-size: .95rem; font-weight: 700; line-height: 1.6; }
-.mvv-text-sm { font-size: .82rem; line-height: 1.8; color: var(--gray); }
+.mvv-vtext {
+  flex: 1;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: flex-start;
+  justify-content: flex-end;
+  gap: 4px;
+}
+.mvv-vtext p {
+  writing-mode: vertical-rl;
+  -webkit-writing-mode: vertical-rl;
+  font-family: "Noto Serif JP", "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", serif;
+  font-size: clamp(1.05rem, 1.7vw, 1.5rem);
+  font-weight: 400;
+  color: #fff;
+  letter-spacing: .12em;
+  line-height: 1.55;
+  text-shadow: 0 2px 6px rgba(0,0,0,.4);
+  margin: 0;
+}
+.mvv-card:hover {
+  transform: translateY(-6px);
+}
+.mvv-card:hover::before {
+  transform: translate(4px, -4px);
+}
+.mvv-card:hover .mvv-card-inner {
+  box-shadow: 0 18px 36px rgba(64, 48, 32, .22);
+}
+.mvv-card:hover .mvv-img {
+  transform: scale(1.04);
+}
 
 .about-facts {
   display: flex;
