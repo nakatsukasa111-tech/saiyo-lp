@@ -164,8 +164,8 @@ h1,h2,h3,h4,p { margin: 0; }
   padding-top: var(--header-h);
   background: var(--white);
 }
-.hero-image-link {
-  display: block;
+.hero-image-wrapper {
+  position: relative;
   width: 100%;
   line-height: 0;
 }
@@ -173,6 +173,21 @@ h1,h2,h3,h4,p { margin: 0; }
   display: block;
   width: 100%;
   height: auto;
+}
+.hero-cta-overlay {
+  position: absolute;
+  left: 58.5%;
+  top: 83%;
+  width: 36%;
+  height: 13%;
+  text-indent: -9999px;
+  overflow: hidden;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.hero-cta-overlay:focus-visible {
+  outline: 3px solid var(--accent, #ff7e1a);
+  outline-offset: 2px;
 }
 .visually-hidden {
   position: absolute;
