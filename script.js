@@ -44,8 +44,8 @@
     });
   });
 
-  // ── Fade-up on scroll (IntersectionObserver) ──
-  var fadeEls = document.querySelectorAll('.fade-up');
+  // ── Fade-up / slide-up on scroll (IntersectionObserver) ──
+  var fadeEls = document.querySelectorAll('.fade-up, .slide-up');
 
   var fadeIO = new IntersectionObserver(
     function (entries) {
@@ -56,7 +56,7 @@
         }
       });
     },
-    { threshold: 0.1 }
+    { threshold: 0.15 }
   );
   fadeEls.forEach(function (el) { fadeIO.observe(el); });
 

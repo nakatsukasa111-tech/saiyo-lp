@@ -3,7 +3,7 @@
    White/Bright Base · NAORU-inspired · Marble Texture
    ========================================= */
 
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700&family=Noto+Sans+JP:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@300;400;500&display=swap');
 
 :root {
   --blue: #1B5FA8;
@@ -164,8 +164,8 @@ h1,h2,h3,h4,p { margin: 0; }
   padding-top: var(--header-h);
   background: var(--white);
 }
-.hero-image-link {
-  display: block;
+.hero-image-wrapper {
+  position: relative;
   width: 100%;
   line-height: 0;
 }
@@ -173,6 +173,46 @@ h1,h2,h3,h4,p { margin: 0; }
   display: block;
   width: 100%;
   height: auto;
+}
+.hero-cta-overlay {
+  position: absolute;
+  left: 58.5%;
+  top: 83%;
+  width: 36%;
+  height: 13%;
+  text-indent: -9999px;
+  overflow: hidden;
+  white-space: nowrap;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: box-shadow .35s ease, background-color .35s ease, transform .35s ease;
+  animation: hero-cta-breathe 2.8s ease-in-out infinite;
+}
+.hero-cta-overlay:hover,
+.hero-cta-overlay:focus-visible {
+  background-color: rgba(225, 62, 5, .10);
+  box-shadow:
+    0 0 0 6px rgba(225, 62, 5, .18),
+    0 18px 42px 6px rgba(225, 62, 5, .55);
+  transform: translateY(-2px);
+  animation-play-state: paused;
+  outline: none;
+}
+@keyframes hero-cta-breathe {
+  0%, 100% {
+    box-shadow:
+      0 0 0 0 rgba(225, 62, 5, 0),
+      0 6px 22px 0 rgba(225, 62, 5, .28);
+  }
+  50% {
+    box-shadow:
+      0 0 0 4px rgba(225, 62, 5, .08),
+      0 10px 32px 4px rgba(225, 62, 5, .45);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-cta-overlay { animation: none; }
+  .hero-cta-overlay:hover { transform: none; }
 }
 .visually-hidden {
   position: absolute;
@@ -225,6 +265,40 @@ h1,h2,h3,h4,p { margin: 0; }
 }
 .ph-icon { font-size: 1.4rem; opacity: .45; }
 .ph-circle { border-radius: 50%; }
+
+/* ── Filled photo (replaces placeholder) ── */
+.ph.has-photo {
+  background: none;
+  border: 0;
+  padding: 0;
+  position: relative;
+  box-shadow:
+    0 6px 18px rgba(64, 48, 32, .16),
+    0 1px 3px rgba(64, 48, 32, .08);
+  transition: transform .4s cubic-bezier(.2,.7,.2,1), box-shadow .4s ease;
+}
+.ph.has-photo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: inset 0 0 22px rgba(64, 48, 32, .12);
+  pointer-events: none;
+}
+.ph.has-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: inherit;
+  filter: saturate(1.04);
+}
+.ph.has-photo:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 14px 30px rgba(64, 48, 32, .22),
+    0 2px 6px rgba(64, 48, 32, .10);
+}
 
 /* =========================================
    02: 選ばれる理由 — 4本柱
@@ -363,23 +437,30 @@ h1,h2,h3,h4,p { margin: 0; }
 .mvv-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-  margin-bottom: 36px;
+  gap: 28px;
+  margin-bottom: 72px;
+}
+.mvv-grid + .mvv-episode {
+  margin-top: 0;
 }
 .mvv-card {
-  text-align: center;
-  background: var(--white);
-  border: 1px solid var(--border);
-  border-radius: var(--r-md);
-  padding: 28px 16px;
+  display: block;
+  line-height: 0;
+  text-decoration: none;
+  transition: transform .4s cubic-bezier(.2,.7,.2,1);
 }
-.mvv-label {
-  font-family: var(--font-en); font-size: .72rem;
-  font-weight: 700; letter-spacing: .15em;
-  color: var(--accent-dark); margin-bottom: 10px;
+.mvv-card img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
-.mvv-text { font-size: .95rem; font-weight: 700; line-height: 1.6; }
-.mvv-text-sm { font-size: .82rem; line-height: 1.8; color: var(--gray); }
+.mvv-card:hover {
+  transform: translateY(-6px);
+}
+.mvv-card:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
 
 .about-facts {
   display: flex;
@@ -400,20 +481,79 @@ h1,h2,h3,h4,p { margin: 0; }
 .benefits-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
+  gap: 20px;
 }
 .benefit-card {
+  position: relative;
   text-align: center;
   background: var(--white);
   border: 1px solid var(--border);
   border-radius: var(--r-md);
-  padding: 28px 16px;
-  transition: transform .3s, box-shadow .3s;
+  padding: 44px 22px 28px;
+  transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease;
+  overflow: hidden;
 }
-.benefit-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
-.benefit-icon { font-size: 2rem; margin-bottom: 10px; }
-.benefit-title { font-size: .92rem; font-weight: 700; margin-bottom: 4px; }
-.benefit-desc { font-size: .75rem; color: var(--gray); }
+.benefit-card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 50%;
+  transform: translateX(-50%);
+  width: 40px; height: 3px;
+  background: var(--accent);
+  border-radius: 0 0 3px 3px;
+  opacity: .85;
+  transition: width .35s ease, background-color .35s ease;
+}
+.benefit-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgba(64, 48, 32, .12), 0 2px 6px rgba(64, 48, 32, .06);
+  border-color: var(--accent-light);
+}
+.benefit-card:hover::before {
+  width: 64px;
+  background: var(--orange);
+}
+.benefit-num {
+  display: inline-block;
+  font-family: var(--font-en);
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: .22em;
+  color: var(--accent);
+  margin-bottom: 14px;
+}
+.benefit-icon {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 18px;
+  color: var(--blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.benefit-icon svg { width: 100%; height: 100%; display: block; }
+.benefit-card:hover .benefit-icon { color: var(--blue-dark); }
+.benefit-en {
+  font-family: var(--font-en);
+  font-size: .62rem;
+  font-weight: 600;
+  letter-spacing: .28em;
+  color: var(--accent-dark);
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+.benefit-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--dark-heading);
+  margin-bottom: 8px;
+  letter-spacing: .02em;
+}
+.benefit-desc {
+  font-size: .78rem;
+  color: var(--gray);
+  line-height: 1.65;
+}
 
 /* =========================================
    05: Training & Advisors
@@ -624,6 +764,674 @@ h1,h2,h3,h4,p { margin: 0; }
 .fade-up { opacity: 0; transform: translateY(28px); transition: opacity .7s ease, transform .7s ease; }
 .fade-up.visible { opacity: 1; transform: translateY(0); }
 
+.slide-up {
+  opacity: 0;
+  transform: translateY(70px);
+  transition: opacity .85s cubic-bezier(.2,.7,.2,1), transform .85s cubic-bezier(.2,.7,.2,1);
+  transition-delay: 0s;
+}
+.slide-up.visible { opacity: 1; transform: translateY(0); }
+.slide-up:nth-child(2) { transition-delay: .15s; }
+.slide-up:nth-child(3) { transition-delay: .30s; }
+.slide-up:nth-child(4) { transition-delay: .45s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .slide-up { opacity: 1; transform: none; transition: none; }
+}
+
+/* =========================================
+   Hero copy block
+   ========================================= */
+.hero-copy-block {
+  padding: 40px 0 8px;
+  text-align: center;
+}
+.hero-catch {
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-weight: 700;
+  line-height: 1.55;
+  color: var(--dark-heading);
+  letter-spacing: .02em;
+  margin: 0 0 20px;
+}
+.hero-sub {
+  font-size: .92rem;
+  line-height: 2;
+  color: var(--gray);
+  margin: 0 auto 28px;
+  max-width: 640px;
+}
+.hero-cta {
+  display: flex;
+  justify-content: center;
+}
+.hero-cta .btn {
+  min-width: 300px;
+  padding: 18px 32px;
+  font-size: 1rem;
+}
+
+/* =========================================
+   WHO WE WANT — 探しています / 向いていません
+   ========================================= */
+.who-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+.who-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+.who-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 26px rgba(64, 48, 32, .12);
+}
+.who-head {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 20px 24px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+}
+.who-head-positive {
+  background: var(--blue-light);
+  color: var(--blue);
+}
+.who-head-negative {
+  background: var(--gray-light);
+  color: #6b6760;
+  border-bottom: 1px solid var(--border);
+}
+.who-num {
+  font-family: var(--font-en);
+  font-style: italic;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1;
+  letter-spacing: .02em;
+}
+.who-head-text {
+  flex: 1;
+}
+.who-body {
+  padding: 26px 28px 28px;
+}
+.who-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.who-list li {
+  position: relative;
+  padding-left: 26px;
+  font-size: .92rem;
+  line-height: 1.75;
+  color: var(--dark);
+}
+.who-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 14px;
+  height: 8px;
+  border-left: 2px solid var(--orange);
+  border-bottom: 2px solid var(--orange);
+  transform: rotate(-45deg);
+}
+.who-list-x li::before {
+  content: "";
+  left: 2px;
+  top: 8px;
+  width: 12px;
+  height: 12px;
+  border: 0;
+  transform: none;
+  background:
+    linear-gradient(45deg, transparent 45%, #b0a89b 45%, #b0a89b 55%, transparent 55%),
+    linear-gradient(-45deg, transparent 45%, #b0a89b 45%, #b0a89b 55%, transparent 55%);
+}
+.who-note {
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px dashed var(--border);
+  font-size: .78rem;
+  color: var(--gray);
+  line-height: 1.75;
+}
+.who-closing {
+  text-align: center;
+  font-size: .95rem;
+  line-height: 2;
+  color: var(--dark);
+  margin: 40px 0 0;
+  padding-top: 32px;
+  border-top: 1px solid var(--border);
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* =========================================
+   A DAY AT NeeDS — 1日の流れ
+   ========================================= */
+.day-photo {
+  aspect-ratio: 16 / 6;
+  margin: 0 auto 40px;
+  max-width: 900px;
+}
+.day-schedules {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 36px;
+}
+.day-schedule {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+.day-schedule:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 26px rgba(64, 48, 32, .12);
+}
+.day-head {
+  padding: 22px 24px 18px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 4px 12px;
+  align-items: baseline;
+}
+.day-head-morning {
+  background: var(--blue-light);
+  color: var(--blue);
+  border-bottom: 3px solid var(--blue);
+}
+.day-head-evening {
+  background: #fbe8dc;
+  color: var(--orange);
+  border-bottom: 3px solid var(--orange);
+}
+.day-head-en {
+  grid-column: 1 / -1;
+  font-family: var(--font-en);
+  font-size: .68rem;
+  font-weight: 600;
+  letter-spacing: .28em;
+  opacity: .8;
+  margin-bottom: 4px;
+}
+.day-head-jp {
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+}
+.day-head-hours {
+  font-family: var(--font-en);
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: .04em;
+}
+.day-body {
+  padding: 20px 24px 22px;
+}
+.day-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: .88rem;
+}
+.day-table th,
+.day-table td {
+  padding: 11px 4px;
+  border-bottom: 1px dashed var(--border);
+  vertical-align: top;
+  text-align: left;
+  line-height: 1.6;
+}
+.day-table th {
+  font-family: var(--font-en);
+  font-weight: 600;
+  font-size: .82rem;
+  color: var(--accent-dark);
+  width: 92px;
+  white-space: nowrap;
+  letter-spacing: .02em;
+}
+.day-table td { color: var(--dark); }
+.day-table tr:last-child th,
+.day-table tr:last-child td { border-bottom: 0; }
+
+/* Callout box */
+.callout-box {
+  max-width: 780px;
+  margin: 0 auto;
+  background: var(--white);
+  border-left: 4px solid var(--accent);
+  border-radius: 0 6px 6px 0;
+  padding: 24px 28px;
+  box-shadow: 0 2px 10px rgba(64, 48, 32, .06);
+}
+.callout-box p {
+  font-size: .92rem;
+  line-height: 1.9;
+  color: var(--dark);
+  margin: 0 0 12px;
+}
+.callout-box p:last-child { margin-bottom: 0; }
+.callout-box strong {
+  color: var(--dark-heading);
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 1px;
+}
+
+/* =========================================
+   WORK STYLE — 働き方と待遇
+   ========================================= */
+.workstyle-block {
+  max-width: 820px;
+  margin: 0 auto 48px;
+}
+.workstyle-head {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--dark-heading);
+  margin: 0 0 20px;
+  padding-left: 14px;
+  border-left: 3px solid var(--accent);
+  line-height: 1.5;
+}
+.workstyle-photo {
+  aspect-ratio: 16 / 6;
+  margin-bottom: 20px;
+}
+.workstyle-body {
+  font-size: .92rem;
+  line-height: 1.95;
+  color: var(--dark);
+}
+.workstyle-notes {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0 0;
+  font-size: .85rem;
+  color: var(--gray);
+}
+.workstyle-notes li {
+  padding-left: 14px;
+  position: relative;
+  line-height: 1.7;
+}
+.workstyle-notes li::before {
+  content: "・";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+}
+.workstyle-caveat {
+  font-size: .78rem;
+  color: var(--gray);
+  margin: 12px 0 0;
+  padding: 8px 12px;
+  background: var(--accent-light);
+  border-radius: 4px;
+  display: inline-block;
+}
+.workstyle-facts {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.workstyle-facts li {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 16px;
+  padding: 14px 4px;
+  border-bottom: 1px solid var(--border);
+  font-size: .92rem;
+  align-items: center;
+}
+.workstyle-facts li:last-child { border-bottom: 0; }
+.workstyle-facts li span {
+  color: var(--gray);
+  font-size: .82rem;
+  font-weight: 600;
+}
+.workstyle-facts strong {
+  color: var(--orange);
+  font-size: 1.05rem;
+  margin-right: 4px;
+}
+
+.salary-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: .88rem;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+.salary-table thead th {
+  background: #3a3530;
+  color: rgba(255,255,255,.9);
+  font-weight: 600;
+  padding: 14px 16px;
+  text-align: left;
+  font-size: .78rem;
+  letter-spacing: .06em;
+}
+.salary-table tbody th {
+  font-weight: 700;
+  padding: 18px 16px;
+  border-bottom: 1px solid var(--border);
+  text-align: center;
+  width: 200px;
+  vertical-align: middle;
+  font-size: .88rem;
+}
+.salary-table tbody tr:nth-child(1) th { background: var(--blue-light); color: var(--blue); }
+.salary-table tbody tr:nth-child(2) th { background: var(--accent-light); color: var(--accent-dark); }
+.salary-table tbody tr:nth-child(3) th { background: var(--orange); color: #fff; }
+.salary-table tbody td {
+  padding: 18px 16px;
+  border-bottom: 1px solid var(--border);
+  color: var(--dark);
+  vertical-align: middle;
+  line-height: 1.6;
+}
+.salary-table tbody tr:last-child th,
+.salary-table tbody tr:last-child td { border-bottom: 0; }
+
+/* =========================================
+   TRAINING — schedule table + body
+   ========================================= */
+.training-photo {
+  aspect-ratio: 16 / 6;
+  margin: 0 auto 36px;
+  max-width: 900px;
+}
+.training-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  overflow: hidden;
+  font-size: .9rem;
+  max-width: 820px;
+  margin: 0 auto 36px;
+  box-shadow: var(--shadow-sm);
+}
+.training-table thead th {
+  background: #3a3530;
+  color: rgba(255,255,255,.9);
+  padding: 14px 18px;
+  text-align: left;
+  font-weight: 600;
+  font-size: .82rem;
+  letter-spacing: .06em;
+}
+.training-table thead th:last-child {
+  background: var(--blue);
+  color: #fff;
+}
+.training-table tbody td {
+  padding: 16px 18px;
+  border-bottom: 1px solid var(--border);
+  color: var(--dark);
+  line-height: 1.6;
+}
+.training-table tbody tr:last-child td { border-bottom: 0; }
+.training-table .training-inhours {
+  background: var(--blue-light);
+  color: var(--blue-dark);
+  font-weight: 600;
+}
+.training-table .training-inhours strong { color: var(--orange); }
+.training-body {
+  max-width: 820px;
+  margin: 0 auto 36px;
+  font-size: .92rem;
+  line-height: 1.95;
+  color: var(--dark);
+}
+.training-body p { margin: 0 0 14px; }
+.training-body .workstyle-head { margin-bottom: 16px; }
+
+/* =========================================
+   ABOUT — merged with advisors
+   ========================================= */
+.about-photo {
+  aspect-ratio: 16 / 7;
+  max-width: 900px;
+  margin: 0 auto 36px;
+}
+.about-note {
+  max-width: 700px;
+  margin: 0 auto 32px;
+  padding: 24px 28px;
+  background: var(--white);
+  border-radius: var(--r-md);
+  border: 1px solid var(--border);
+}
+.about-note-head {
+  font-size: .95rem;
+  font-weight: 700;
+  color: var(--dark-heading);
+  margin: 0 0 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--accent-light);
+}
+.about-note p {
+  font-size: .92rem;
+  line-height: 1.95;
+  color: var(--dark);
+  margin: 0;
+}
+
+/* =========================================
+   MVV — episode style
+   ========================================= */
+.mvv-episode {
+  max-width: 820px;
+  margin: 0 auto 40px;
+  padding: 40px 40px 36px;
+  background: var(--white);
+  border-radius: var(--r-md);
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 14px rgba(64, 48, 32, .06);
+  position: relative;
+}
+.mvv-episode::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 50%;
+  transform: translateX(-50%);
+  width: 56px;
+  height: 3px;
+  background: var(--accent);
+  border-radius: 0 0 3px 3px;
+}
+.mvv-episode-lead {
+  text-align: center;
+  padding: 44px 40px 38px;
+  background: linear-gradient(180deg, #fdfaf5 0%, #fff 100%);
+}
+.mvv-ep-num {
+  font-family: var(--font-en);
+  font-size: .78rem;
+  font-weight: 600;
+  letter-spacing: .32em;
+  color: var(--accent-dark);
+  text-align: center;
+  margin-bottom: 12px;
+}
+.mvv-ep-num-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+.mvv-ep-num-big {
+  font-family: var(--font-en);
+  font-style: italic;
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1;
+  letter-spacing: .02em;
+}
+.mvv-ep-num-en {
+  font-family: var(--font-en);
+  font-size: .82rem;
+  font-weight: 600;
+  letter-spacing: .28em;
+  color: var(--accent-dark);
+}
+.mvv-episode-lead .mvv-ep-lead {
+  font-size: clamp(1.25rem, 2.2vw, 1.7rem);
+  color: var(--dark-heading);
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+.mvv-ep-lead {
+  text-align: center;
+  font-size: clamp(1.15rem, 2vw, 1.5rem);
+  font-weight: 700;
+  color: var(--dark-heading);
+  line-height: 1.6;
+  letter-spacing: .04em;
+  margin: 0 0 22px;
+  padding-bottom: 22px;
+  border-bottom: 1px solid var(--accent-light);
+}
+.mvv-ep-lead::after {
+  content: "";
+  display: block;
+  width: 32px;
+  height: 2px;
+  background: var(--accent);
+  margin: 16px auto 0;
+}
+.mvv-episode-lead .mvv-ep-lead::after { display: none; }
+.mvv-ep-body {
+  font-size: .92rem;
+  line-height: 2;
+  color: var(--dark);
+}
+.mvv-ep-body p { margin: 0 0 14px; }
+.mvv-ep-body p:last-child { margin: 0; }
+
+/* =========================================
+   FAQ — details/summary accordion
+   ========================================= */
+.faq-list {
+  max-width: 820px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.faq-item {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow .3s ease, transform .3s ease;
+}
+.faq-item:hover {
+  box-shadow: 0 10px 22px rgba(64, 48, 32, .10);
+}
+.faq-item[open] {
+  box-shadow: 0 10px 22px rgba(64, 48, 32, .10);
+}
+.faq-item summary {
+  padding: 22px 60px 22px 28px;
+  font-size: .98rem;
+  font-weight: 700;
+  color: var(--dark-heading);
+  cursor: pointer;
+  list-style: none;
+  position: relative;
+  line-height: 1.6;
+  transition: background-color .2s ease;
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::before {
+  content: "Q";
+  flex: 0 0 auto;
+  font-family: var(--font-en);
+  font-style: italic;
+  font-size: 1.6rem;
+  color: var(--accent);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: .02em;
+}
+.faq-item summary::after {
+  content: "";
+  position: absolute;
+  right: 28px;
+  top: 50%;
+  width: 12px;
+  height: 12px;
+  border-right: 2px solid var(--accent);
+  border-bottom: 2px solid var(--accent);
+  transform: translateY(-80%) rotate(45deg);
+  transition: transform .3s ease;
+}
+.faq-item[open] summary { background: var(--accent-light); }
+.faq-item[open] summary::after {
+  transform: translateY(-20%) rotate(-135deg);
+}
+.faq-item:hover summary { background: var(--gray-light); }
+.faq-item[open]:hover summary { background: var(--accent-light); }
+.faq-answer {
+  padding: 20px 28px 26px 66px;
+  font-size: .92rem;
+  line-height: 2;
+  color: var(--dark);
+  border-top: 1px solid var(--accent-light);
+  position: relative;
+}
+.faq-answer::before {
+  content: "A";
+  position: absolute;
+  left: 28px;
+  top: 22px;
+  font-family: var(--font-en);
+  font-style: italic;
+  font-size: 1.4rem;
+  color: var(--blue);
+  font-weight: 700;
+  line-height: 1;
+}
+
 /* =========================================
    Responsive
    ========================================= */
@@ -656,6 +1464,20 @@ h1,h2,h3,h4,p { margin: 0; }
   .job-row { grid-template-columns: 110px 1fr; }
   .fixed-cta { display: block; }
   body { padding-bottom: 76px; }
+
+  .who-grid { grid-template-columns: 1fr; gap: 16px; }
+  .day-schedules { grid-template-columns: 1fr; gap: 16px; }
+  .day-photo, .workstyle-photo, .training-photo, .about-photo { aspect-ratio: 16 / 9; }
+  .salary-table { font-size: .78rem; }
+  .salary-table tbody th { width: 130px; padding: 10px; }
+  .salary-table tbody td { padding: 10px; }
+  .training-table { font-size: .8rem; }
+  .compare-issue-table { font-size: .8rem; }
+  .compare-issue-table tbody td { padding: 12px 14px; }
+  .hero-catch { font-size: 1.35rem; }
+  .hero-sub { font-size: .85rem; }
+  .hero-cta .btn { min-width: auto; width: 100%; padding: 16px 20px; font-size: .9rem; }
+  .mvv-episode { padding: 24px 20px 22px; }
 }
 @media (max-width:480px) {
   .benefits-grid { grid-template-columns: 1fr; }
@@ -666,4 +1488,7 @@ h1,h2,h3,h4,p { margin: 0; }
   .ceo-photo { margin: 0 auto; }
   .voice-card { grid-template-columns: 1fr; text-align: center; }
   .voice-avatar { margin: 0 auto; }
+  .workstyle-facts li { grid-template-columns: 1fr; gap: 4px; }
+  .faq-item summary { padding: 16px 40px 16px 18px; font-size: .88rem; }
+  .faq-answer { padding: 4px 18px 20px; }
 }
