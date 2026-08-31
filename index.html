@@ -235,22 +235,37 @@
     </section>
 
     <!-- ============================================================
-         07: OUR VALUES — MVV（エピソード形式）
+         07: OUR VALUES — MVV（画像カード + エピソード形式）
     ============================================================= -->
     <section class="section section-white" id="values">
       <div class="container">
         <div class="section-head fade-up">
           <p class="section-en">OUR VALUES</p>
-          <h2 class="section-title">NeeDSが大切にしていること</h2>
+          <h2 class="section-title">「自分のことが好きになれる場所」を、<br class="pc-only">スタッフにも作りたい。</h2>
           <span class="section-title-bar"></span>
+          <p class="section-desc">NeeDSのVision「自分のことが好きになる場所」は、お客様だけでなくスタッフにも当てはまります。</p>
         </div>
 
-        <div class="mvv-episode mvv-episode-lead fade-up">
+        <!-- MVV image cards (visual anchor) -->
+        <div class="mvv-grid fade-up">
+          <a class="mvv-card" href="#mvv-mission" aria-label="MISSION — 関わる人々の人生を、より良く変えること">
+            <img src="assets/mvv-mission.jpg" alt="MISSION — 関わる人々の人生を、より良く変えること" loading="lazy">
+          </a>
+          <a class="mvv-card" href="#mvv-vision" aria-label="VISION — 自分のことが好きになる場所">
+            <img src="assets/mvv-vision.jpg" alt="VISION — 自分のことが好きになる場所" loading="lazy">
+          </a>
+          <a class="mvv-card" href="#mvv-value" aria-label="VALUE — ワクワクする・プロ意識を持つ・チームプレイする">
+            <img src="assets/mvv-value.jpg" alt="VALUE — ワクワクする、プロ意識を持つ、チームプレイする" loading="lazy">
+          </a>
+        </div>
+
+        <!-- MVV episodes (deep read) -->
+        <div id="mvv-mission" class="mvv-episode mvv-episode-lead fade-up">
           <div class="mvv-ep-num">MISSION</div>
           <p class="mvv-ep-lead">関わる人々の人生を、<br class="sp-only">より良く変えること</p>
         </div>
 
-        <div class="mvv-episode fade-up">
+        <div id="mvv-vision" class="mvv-episode fade-up">
           <div class="mvv-ep-num-row">
             <div class="mvv-ep-num-en">VISION</div>
           </div>
@@ -266,7 +281,7 @@
           </div>
         </div>
 
-        <div class="mvv-episode fade-up">
+        <div id="mvv-value" class="mvv-episode fade-up">
           <div class="mvv-ep-num-row">
             <div class="mvv-ep-num-big">01</div>
             <div class="mvv-ep-num-en">VALUE</div>
