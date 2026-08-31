@@ -780,6 +780,40 @@ h1,h2,h3,h4,p { margin: 0; }
 }
 
 /* =========================================
+   LP inline photo (replaces .ph placeholders)
+   ========================================= */
+.lp-photo {
+  max-width: 900px;
+  margin: 0 auto 36px;
+  border-radius: var(--r-md);
+  overflow: hidden;
+  box-shadow: 0 6px 22px rgba(64, 48, 32, .10);
+  line-height: 0;
+}
+.lp-photo img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.lp-photo-workstyle {
+  aspect-ratio: 16 / 7;
+  margin-bottom: 20px;
+}
+.lp-photo-workstyle img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+}
+.lp-photo-day, .lp-photo-training, .lp-photo-about {
+  aspect-ratio: 16 / 7;
+}
+.lp-photo-day img,
+.lp-photo-training img,
+.lp-photo-about img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+}
+
+/* =========================================
    Hero copy block
    ========================================= */
 .hero-copy-block {
