@@ -6,10 +6,10 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@300;400;500&display=swap');
 
 :root {
-  --blue: #1B5FA8;
-  --blue-mid: #3A7CC4;
-  --blue-light: #EBF2FB;
-  --blue-dark: #144A85;
+  --blue: #4885c0;
+  --blue-mid: #5a96cc;
+  --blue-light: #e8f1f8;
+  --blue-dark: #3570a8;
   --dark: #2C2520;
   --dark-heading: #1A1A1A;
   --gray: #6B6B6B;
@@ -17,12 +17,13 @@
   --border: #E8E4DF;
   --white: #FFFFFF;
   --bg: #FAFAF8;
-  --accent: #C4935A;
-  --accent-dark: #A87B44;
-  --accent-light: #F5EDE2;
-  --orange: #D4622A;
+  --accent: #4885c0;
+  --accent-dark: #3570a8;
+  --accent-light: #e8f1f8;
+  --orange: #F07323;
 
   --maxw: 1100px;
+  --ann-h: 36px;
   --header-h: 68px;
   --r-sm: 6px;
   --r-md: 12px;
@@ -39,7 +40,7 @@
 
 /* ── Reset ── */
 *, *::before, *::after { box-sizing: border-box; }
-html { scroll-behavior: smooth; scroll-padding-top: var(--header-h); }
+html { scroll-behavior: smooth; scroll-padding-top: calc(var(--header-h) + var(--ann-h)); }
 body {
   margin: 0;
   font-family: var(--font-ja);
@@ -77,10 +78,28 @@ h1,h2,h3,h4,p { margin: 0; }
 }
 
 /* =========================================
+   Announcement Bar
+   ========================================= */
+.announcement-bar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 101;
+  background: var(--blue);
+  color: #fff;
+  text-align: center;
+  padding: 0 16px;
+  height: var(--ann-h);
+  line-height: var(--ann-h);
+  font-size: .8rem;
+  font-weight: 500;
+  letter-spacing: .05em;
+}
+
+/* =========================================
    Header
    ========================================= */
 .site-header {
-  position: fixed; top: 0; left: 0; right: 0;
+  position: fixed; top: var(--ann-h); left: 0; right: 0;
   height: var(--header-h);
   background: rgba(255,255,255,0.94);
   backdrop-filter: saturate(140%) blur(12px);
@@ -100,6 +119,7 @@ h1,h2,h3,h4,p { margin: 0; }
 
 /* Logo */
 .logo { display: inline-flex; align-items: center; gap: 10px; }
+.logo-img { height: 30px; width: auto; display: block; }
 .logo-mark {
   width: 36px; height: 36px; border-radius: 8px;
   background: var(--blue); color: #fff;
@@ -120,7 +140,7 @@ h1,h2,h3,h4,p { margin: 0; }
   padding: 10px 24px; border-radius: var(--r-pill);
   font-weight: 700; font-size: .85rem;
 }
-.nav-cta:hover { background: #c0551e; }
+.nav-cta:hover { background: #d86220; }
 
 .nav-toggle { display: none; width: 40px; height: 40px; background: 0; border: 0; }
 .nav-toggle span { display: block; width: 22px; height: 2px; background: var(--dark); margin: 5px auto; transition: transform .25s, opacity .25s; }
@@ -137,11 +157,11 @@ h1,h2,h3,h4,p { margin: 0; }
 }
 .btn-orange {
   background: var(--orange); color: #fff;
-  box-shadow: 0 6px 20px rgba(212,98,42,0.3);
+  box-shadow: 0 6px 20px rgba(240,115,35,0.35);
 }
 .btn-orange:hover {
-  background: #c0551e; transform: translateY(-2px);
-  box-shadow: 0 10px 28px rgba(212,98,42,0.35); color: #fff;
+  background: #d86220; transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(240,115,35,0.45); color: #fff;
 }
 .btn-blue {
   background: var(--blue); color: #fff;
@@ -161,7 +181,7 @@ h1,h2,h3,h4,p { margin: 0; }
    01: Hero / FV
    ========================================= */
 .hero {
-  padding-top: var(--header-h);
+  padding-top: calc(var(--header-h) + var(--ann-h));
   background: var(--white);
 }
 .hero-image-wrapper {
@@ -173,6 +193,7 @@ h1,h2,h3,h4,p { margin: 0; }
   display: block;
   width: 100%;
   height: auto;
+  filter: brightness(1.15);
 }
 .hero-cta-overlay {
   position: absolute;
@@ -434,6 +455,8 @@ h1,h2,h3,h4,p { margin: 0; }
 /* =========================================
    03: About — MVV
    ========================================= */
+#values { padding-top: 48px; }
+
 .mvv-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -523,8 +546,8 @@ h1,h2,h3,h4,p { margin: 0; }
   margin-bottom: 14px;
 }
 .benefit-icon {
-  width: 56px;
-  height: 56px;
+  width: 68px;
+  height: 68px;
   margin: 0 auto 18px;
   color: var(--blue);
   display: flex;
@@ -543,7 +566,7 @@ h1,h2,h3,h4,p { margin: 0; }
   text-transform: uppercase;
 }
 .benefit-title {
-  font-size: 1rem;
+  font-size: 1.05rem;
   font-weight: 700;
   color: var(--dark-heading);
   margin-bottom: 8px;
@@ -624,14 +647,14 @@ h1,h2,h3,h4,p { margin: 0; }
   margin-bottom: 48px;
 }
 .voice-card {
-  display: grid; grid-template-columns: 64px 1fr; gap: 16px;
+  display: grid; grid-template-columns: 120px 1fr; gap: 20px;
   align-items: start;
   background: var(--white);
   border: 1px solid var(--border);
   border-radius: var(--r-md);
   padding: 24px;
 }
-.voice-avatar { width: 64px; height: 64px; font-size: .6rem; }
+.voice-avatar { width: 120px; height: 150px; border-radius: var(--r-sm); font-size: .6rem; }
 .voice-name { font-size: .92rem; font-weight: 700; }
 .voice-name span { font-size: .78rem; font-weight: 400; color: var(--gray); margin-left: 6px; }
 .voice-text { font-size: .85rem; color: var(--gray); line-height: 1.8; margin-top: 6px; }
@@ -840,7 +863,7 @@ h1,h2,h3,h4,p { margin: 0; }
    Hero copy block
    ========================================= */
 .hero-copy-block {
-  padding: 40px 0 8px;
+  padding: 12px 0 8px;
   text-align: center;
 }
 .hero-catch {
@@ -1544,7 +1567,7 @@ h1,h2,h3,h4,p { margin: 0; }
   .ceo-inner { grid-template-columns: 1fr; text-align: center; }
   .ceo-photo { margin: 0 auto; }
   .voice-card { grid-template-columns: 1fr; text-align: center; }
-  .voice-avatar { margin: 0 auto; }
+  .voice-avatar { margin: 0 auto; width: 100px; height: 120px; }
   .workstyle-facts li { grid-template-columns: 1fr; gap: 4px; }
   .faq-item summary { padding: 16px 40px 16px 18px; font-size: .88rem; }
   .faq-answer { padding: 4px 18px 20px; }
