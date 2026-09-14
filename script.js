@@ -25,7 +25,7 @@ nav.querySelectorAll('a').forEach((a) => {
 // Fade-in on scroll (IntersectionObserver)
 // ============================================
 const fadeTargets = document.querySelectorAll(
-  '.section-head, .about-media, .about-text, .feature-card, .welcome, .job-card, .voice-card, .entry-form'
+  '.section-head, .mvv-card, .mission-body, .voice-card, .about-photo, .about-text, .feature-card, .welcome, .job-card, .entry-form'
 );
 fadeTargets.forEach((el) => {
   el.style.opacity = '0';
