@@ -82,7 +82,8 @@ h1,h2,h3,h4,p { margin: 0; }
 .site-header {
   position: fixed; top: 0; left: 0; right: 0;
   height: var(--header-h);
-  background: var(--blue);
+  background: #4885c0;
+  color: #fff;
   z-index: 100;
   transition: box-shadow .3s;
 }
@@ -105,7 +106,17 @@ h1,h2,h3,h4,p { margin: 0; }
 
 /* Logo */
 .logo { display: inline-flex; align-items: center; gap: 10px; flex-shrink: 0; }
-.logo-img { height: 28px; width: auto; display: block; filter: brightness(0) invert(1); }
+.logo-box {
+  display: inline-flex; align-items: center; justify-content: center;
+  background: #fff;
+  border-radius: 6px;
+  padding: 4px 8px;
+  line-height: 0;
+}
+.logo-box-dark {
+  background: var(--gray-light);
+}
+.logo-img { height: 26px; width: auto; display: block; }
 .logo-mark {
   width: 36px; height: 36px; border-radius: 8px;
   background: var(--blue); color: #fff;
